@@ -23,7 +23,7 @@ extern "C" {
 
 #define HDPATH_LEN_DEFAULT   5
 #define HDPATH_0_DEFAULT     (0x80000000 | 0x2c)
-#define HDPATH_1_DEFAULT     (0x80000000 | 0x162)       // 354
+#define HDPATH_1_DEFAULT     (0x80000000 | 0x1)       // 1
 
 #define PK_LEN_ED25519       32u
 
@@ -35,16 +35,16 @@ typedef enum {
 #define VIEW_ADDRESS_OFFSET_ED25519         (PK_LEN_ED25519)
 
 // Coin Specific
-#define PK_ADDRESS_TYPE                     COIN_ADDR_TYPE_POLKADOT
+#define PK_ADDRESS_TYPE                     COIN_ADDR_TYPE_DEV  // TODO: This needs to be changed
 #define SUPPORTED_TX_VERSION                LEDGER_MAJOR_VERSION
 #define SUPPORTED_SPEC_VERSION              LEDGER_MINOR_VERSION
-#define SUPPORTED_MINIMUM_SPEC_VERSION      23
+#define SUPPORTED_MINIMUM_SPEC_VERSION      13
 
-#define COIN_AMOUNT_DECIMAL_PLACES          10
+#define COIN_AMOUNT_DECIMAL_PLACES          6
 #define CRYPTO_BLOB_SKIP_BYTES              0
 
-#define COIN_GENESIS_HASH                   "91b171bb158e2d3848fa23a9f1c25182fb8e20313b2c1eb49219da7a70ce90c3"
-#define COIN_NAME                           "Polkadot"
+#define COIN_GENESIS_HASH                   "cee880310369cb2740cccc517adb4378b957b0b1e3c56b375ee29d82124a0c47"
+#define COIN_NAME                           "Dock"
 
 #if defined(APP_STANDARD)
 #include "coin_standard.h"

@@ -24,6 +24,8 @@ extern "C" {
 #define COIN_ADDR_TYPE_EDGEWARE         7
 #define COIN_ADDR_TYPE_KULUPU           16
 #define COIN_ADDR_TYPE_DOTHEREUM        20
+#define COIN_ADDR_TYPE_DOCK_MAINNET     22
+#define COIN_ADDR_TYPE_DEV              42
 
 #ifdef __cplusplus
 }

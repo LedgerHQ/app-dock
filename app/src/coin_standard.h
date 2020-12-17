@@ -28,9 +28,9 @@ extern "C" {
 #define HDPATH_3_DEFAULT     (0u)
 #define HDPATH_4_DEFAULT     (0u)
 
-#define MENU_MAIN_APP_LINE1                 "Polkadot"
+#define MENU_MAIN_APP_LINE1                 "Dock"
 #define MENU_MAIN_APP_LINE2                 "Ready"
-#define APPVERSION_LINE1                    "Polkadot"
+#define APPVERSION_LINE1                    "Dock1"
 #define APPVERSION_LINE2                    "v" APPVERSION
 
 #ifdef __cplusplus
