@@ -30,7 +30,7 @@ extern "C" {
 
 #define MENU_MAIN_APP_LINE1                 "Dock"
 #define MENU_MAIN_APP_LINE2                 "Ready"
-#define APPVERSION_LINE1                    "Dock1"
+#define APPVERSION_LINE1                    "Dock"
 #define APPVERSION_LINE2                    "v" APPVERSION
 
 #ifdef __cplusplus

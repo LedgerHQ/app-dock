@@ -55,6 +55,11 @@ DEFINES += APP_STANDARD
 APPNAME = "Polkadot"
 APPPATH = "44'/354'"
 
+else ifeq ($(COIN),DCK)
+DEFINES += APP_STANDARD
+APPNAME = "Dock"
+APPPATH = "44'/594'"
+
 else ifeq ($(COIN),Ledgeracio)
 DEFINES += APP_RESTRICTED
 APPNAME = "Polkadot_sec"

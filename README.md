@@ -1,10 +1,9 @@
-# Ledger Polkadot app
+# Ledger Dock app
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![CircleCI](https://circleci.com/gh/Zondax/ledger-polkadot.svg?style=shield)](https://circleci.com/gh/Zondax/ledger-polkadot)
 
 >NOTE: The minor value in the version number indicates runtime compatibility. For instance: 0.1042.1, Indicates that the app is compatible with runtime 1042*
 
-This project contains the Polkadot app (https://polkadot.network/) for Ledger Nano S and X.
+This project contains the Dock app (https://dock.io/) for Ledger Nano S and X.
 
 - Ledger Nano S/X BOLOS app
 - Specs / Documentation
@@ -68,7 +67,7 @@ then run:
 - This project requires Ledger firmware 1.6
     - The current repository keeps track of Ledger's SDK but it is possible to override it by changing the git submodule.
 
-*Warning*: Some IDEs may not use the same python interpreter or virtual enviroment as the one you used when running `pip`.
+*Warning*: Some IDEs may not use the same python interpreter or virtual environment as the one you used when running `pip`.
 If you see conan is not found, check that you installed the package in the same interpreter as the one that launches `cmake`.
 
 ## How to build ?
@@ -250,7 +249,7 @@ The Makefile will build the firmware in a docker container and leave the binary 
 - Build
 
    ```
-   make                # Builds the app
+   make COIN=DCK               # Builds the app
    ```
 
 - Upload to a device
