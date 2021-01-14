@@ -30,6 +30,8 @@ extern "C" {
 #define Data_e_KECCAK256_U8_32 36
 #define Data_e_SHATHREE256_U8_32 37
 
+#define BalanceSize 8
+
 typedef uint8_t pd_bool_t;
 typedef uint16_t pd_u16_t;
 typedef uint32_t pd_u32_t;

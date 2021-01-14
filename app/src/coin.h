@@ -38,12 +38,12 @@ typedef enum {
 #define PK_ADDRESS_TYPE                     COIN_ADDR_TYPE_DOCK_MAINNET
 #define SUPPORTED_TX_VERSION                LEDGER_MAJOR_VERSION
 #define SUPPORTED_SPEC_VERSION              LEDGER_MINOR_VERSION
-#define SUPPORTED_MINIMUM_SPEC_VERSION      13
+#define SUPPORTED_MINIMUM_SPEC_VERSION      19
 
 #define COIN_AMOUNT_DECIMAL_PLACES          6
 #define CRYPTO_BLOB_SKIP_BYTES              0
 
-#define COIN_GENESIS_HASH                   "0xf73467c6544aa68df2ee546b135f955c46b90fa627e9b5d7935f41061bb8a5a9"
+#define COIN_GENESIS_HASH                   "f73467c6544aa68df2ee546b135f955c46b90fa627e9b5d7935f41061bb8a5a9"
 #define COIN_NAME                           "Dock"
 
 #if defined(APP_STANDARD)

@@ -106,7 +106,7 @@ parser_error_t _readVote(parser_context_t* c, pd_Vote_t* v)
 }
 
 parser_error_t _readBalanceOf(parser_context_t* c, pd_BalanceOf_t* v) {
-    GEN_DEF_READARRAY(16)
+    GEN_DEF_READARRAY(BalanceSize)
 }
 
 parser_error_t _readData(parser_context_t* c, pd_Data_t* v)
@@ -759,7 +759,7 @@ parser_error_t _toStringBalanceOf(
     uint8_t bcdOut[100];
     const uint16_t bcdOutLen = sizeof(bcdOut);
 
-    bignumLittleEndian_to_bcd(bcdOut, bcdOutLen, v->_ptr, 16);
+    bignumLittleEndian_to_bcd(bcdOut, bcdOutLen, v->_ptr, BalanceSize);
     if (!bignumLittleEndian_bcdprint(bufferUI, sizeof(bufferUI), bcdOut, bcdOutLen)) {
         return parser_unexpected_buffer_end;
     }
