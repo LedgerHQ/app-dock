@@ -15,7 +15,7 @@
  ******************************************************************************* */
 
 import Zemu, { DEFAULT_START_OPTIONS } from '@zondax/zemu'
-import { newPolkadotApp } from '@zondax/ledger-polkadot'
+import { newDockApp } from '@zondax/ledger-polkadot'
 import { APP_SEED } from './common'
 
 // @ts-ignore
@@ -40,7 +40,7 @@ describe('SR25519', function () {
     const sim = new Zemu(APP_PATH)
     try {
       await sim.start({ ...defaultOptions })
-      const app = newPolkadotApp(sim.getTransport())
+      const app = newDockApp(sim.getTransport())
 
       const resp = await app.getAddress(0x80000000, 0x80000000, 0x80000000, false, 1)
 

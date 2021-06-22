@@ -30,6 +30,8 @@ parser_error_t _readMethod(
         return _readMethod_V7(c, moduleIdx, callIdx, &method->V7);
     case 6:
         return _readMethod_V6(c, moduleIdx, callIdx, &method->V6);
+    case 1:
+        return _readMethod_V1(c, moduleIdx, callIdx, &method->V1);
     default:
         return parser_not_supported;
     }
@@ -42,6 +44,8 @@ uint8_t _getMethod_NumItems(uint32_t transactionVersion, uint8_t moduleIdx, uint
         return _getMethod_NumItems_V7(moduleIdx, callIdx);
     case 6:
         return _getMethod_NumItems_V6(moduleIdx, callIdx);
+    case 1:
+        return _getMethod_NumItems_V1(moduleIdx, callIdx);
     default:
         return parser_not_supported;
     }
@@ -54,6 +58,8 @@ const char* _getMethod_ModuleName(uint32_t transactionVersion, uint8_t moduleIdx
         return _getMethod_ModuleName_V7(moduleIdx);
     case 6:
         return _getMethod_ModuleName_V6(moduleIdx);
+    case 1:
+        return _getMethod_ModuleName_V1(moduleIdx);
     default:
         return NULL;
     }
@@ -66,6 +72,8 @@ const char* _getMethod_Name(uint32_t transactionVersion, uint8_t moduleIdx, uint
         return _getMethod_Name_V7(moduleIdx, callIdx);
     case 6:
         return _getMethod_Name_V6(moduleIdx, callIdx);
+    case 1:
+        return _getMethod_Name_V1(moduleIdx, callIdx);
     default:
         return 0;
     }
@@ -78,6 +86,8 @@ const char* _getMethod_ItemName(uint32_t transactionVersion, uint8_t moduleIdx, 
         return _getMethod_ItemName_V7(moduleIdx, callIdx, itemIdx);
     case 6:
         return _getMethod_ItemName_V6(moduleIdx, callIdx, itemIdx);
+    case 1:
+        return _getMethod_ItemName_V1(moduleIdx, callIdx, itemIdx);
     default:
         return NULL;
     }
@@ -94,6 +104,9 @@ parser_error_t _getMethod_ItemValue(uint32_t transactionVersion, pd_Method_t* m,
     case 6:
         return _getMethod_ItemValue_V6(&m->V6, moduleIdx, callIdx, itemIdx, outValue,
             outValueLen, pageIdx, pageCount);
+    case 1:
+        return _getMethod_ItemValue_V1(&m->V1, moduleIdx, callIdx, itemIdx, outValue,
+            outValueLen, pageIdx, pageCount);
     default:
         return parser_not_supported;
     }
@@ -106,6 +119,8 @@ bool _getMethod_ItemIsExpert(uint32_t transactionVersion, uint8_t moduleIdx, uin
         return _getMethod_ItemIsExpert_V7(moduleIdx, callIdx, itemIdx);
     case 6:
         return _getMethod_ItemIsExpert_V6(moduleIdx, callIdx, itemIdx);
+    case 1:
+        return _getMethod_ItemIsExpert_V1(moduleIdx, callIdx, itemIdx);
     default:
         return false;
     }
@@ -118,6 +133,8 @@ bool _getMethod_IsNestingSupported(uint32_t transactionVersion, uint8_t moduleId
         return _getMethod_IsNestingSupported_V7(moduleIdx, callIdx);
     case 6:
         return _getMethod_IsNestingSupported_V6(moduleIdx, callIdx);
+    case 1:
+        return _getMethod_IsNestingSupported_V1(moduleIdx, callIdx);
     default:
         return false;
     }

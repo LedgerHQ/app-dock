@@ -113,7 +113,8 @@ parser_error_t _readCompactBlockNumber(parser_context_t* c, pd_CompactBlockNumbe
 }
 
 parser_error_t _readBalance(parser_context_t* c, pd_Balance_t* v) {
-    GEN_DEF_READARRAY(16)
+    // Dock's balance type is u64, i.e. 8 bytes
+    GEN_DEF_READARRAY(8)
 }
 
 parser_error_t _readData(parser_context_t* c, pd_Data_t* v)

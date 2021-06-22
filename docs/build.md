@@ -164,7 +164,7 @@ The Makefile will build the firmware in a docker container and leave the binary 
 - Build
 
    ```
-   make                # Builds the app
+   make COIN=DOCK               # Builds the app
    ```
    ```
 

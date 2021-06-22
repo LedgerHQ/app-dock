@@ -19,14 +19,14 @@
 extern "C" {
 #endif
 
-// Modules names
+// Module names
 static const char* STR_MO_SYSTEM = "System";
 static const char* STR_MO_SCHEDULER = "Scheduler";
 static const char* STR_MO_BABE = "Babe";
 static const char* STR_MO_TIMESTAMP = "Timestamp";
-static const char* STR_MO_INDICES = "Indices";
+//static const char* STR_MO_INDICES = "Indices";
 static const char* STR_MO_BALANCES = "Balances";
-static const char* STR_MO_AUTHORSHIP = "Authorship";
+//static const char* STR_MO_AUTHORSHIP = "Authorship";
 static const char* STR_MO_STAKING = "Staking";
 static const char* STR_MO_OFFENCES = "Offences";
 static const char* STR_MO_SESSION = "Session";
@@ -37,20 +37,28 @@ static const char* STR_MO_DEMOCRACY = "Democracy";
 static const char* STR_MO_COUNCIL = "Council";
 static const char* STR_MO_TECHNICALCOMMITTEE = "Technicalcommittee";
 static const char* STR_MO_ELECTIONSPHRAGMEN = "Electionsphragmen";
-static const char* STR_MO_TECHNICALMEMBERSHIP = "Technicalmembership";
+static const char* STR_MO_TECHNICALMEMBERSHIP = "Technicalcommitteemembership";
 static const char* STR_MO_TREASURY = "Treasury";
-static const char* STR_MO_CLAIMS = "Claims";
-static const char* STR_MO_VESTING = "Vesting";
+//static const char* STR_MO_CLAIMS = "Claims";
+//static const char* STR_MO_VESTING = "Vesting";
 static const char* STR_MO_UTILITY = "Utility";
 static const char* STR_MO_IDENTITY = "Identity";
-static const char* STR_MO_PROXY = "Proxy";
-static const char* STR_MO_MULTISIG = "Multisig";
+//static const char* STR_MO_PROXY = "Proxy";
+//static const char* STR_MO_MULTISIG = "Multisig";
 static const char* STR_MO_BOUNTIES = "Bounties";
 static const char* STR_MO_TIPS = "Tips";
 static const char* STR_MO_ELECTIONPROVIDERMULTIPHASE = "Electionprovidermultiphase";
 static const char* STR_MO_PHRAGMENELECTION = "Phragmenelection";
+static const char* STR_MO_POAMODULE = "Poamodule";
+static const char* STR_MO_MIGRATIONMODULE = "Migration";
+static const char* STR_MO_MASTERMODULE = "Master";
+static const char* STR_MO_DIDMODULE = "Didmodule";
+static const char* STR_MO_REVOKEMODULE = "Revoke";
+static const char* STR_MO_BLOBSTOREMODULE = "Blobstore";
+static const char* STR_MO_ANCHORMODULE = "Anchor";
+static const char* STR_MO_ATTESTMODULE = "Attest";
 
-// Methods names
+// Method names
 static const char* STR_ME_FILL_BLOCK = "Fill block";
 static const char* STR_ME_REMARK = "Remark";
 static const char* STR_ME_SET_HEAP_PAGES = "Set heap pages";
@@ -210,7 +218,7 @@ static const char* STR_ME_SUBMIT_UNSIGNED = "Submit unsigned";
 static const char* STR_ME_REMARK_WITH_EVENT = "Remark with event";
 static const char* STR_ME_PLAN_CONFIG_CHANGE = "Plan config change";
 
-// Items names
+// Item names
 static const char* STR_IT__ratio = "Ratio";
 static const char* STR_IT__remark = "Remark";
 static const char* STR_IT_pages = "Pages";

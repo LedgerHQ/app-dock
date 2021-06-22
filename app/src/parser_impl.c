@@ -325,7 +325,7 @@ parser_error_t _toStringCompactBalance(const pd_CompactBalance_t *v,
 parser_error_t _checkVersions(parser_context_t *c) {
     // Methods are not length delimited so in order to retrieve the specVersion
     // it is necessary to parse from the back.
-    // The transaction is expect to end in
+    // The transaction is expected to end in
     // [4 bytes] specVersion
     // [4 bytes] transactionVersion
     // [32 bytes] genesisHash
