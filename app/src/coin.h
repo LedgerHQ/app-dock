@@ -24,6 +24,7 @@ extern "C" {
 #define HDPATH_LEN_DEFAULT   5
 #define HDPATH_0_DEFAULT     (0x80000000 | 0x2c)
 #define HDPATH_1_DEFAULT     (0x80000000 | 0x252)   // 594 for Dock
+#define HDPATH_1_RECOVERY    (0x80000000 | 0x162)   // 354 - Polkadot
 
 #define SK_LEN_25519         64u
 #define SCALAR_LEN_ED25519   32u

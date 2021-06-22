@@ -81,7 +81,7 @@ APPPATH = "44'/594'"
 else ifeq ($(COIN),DOCK_XL)
 # XXL app configuration
 DEFINES += APP_STANDARD SUBSTRATE_PARSER_FULL
-APPNAME = "Polkadot XL"
+APPNAME = "DOCK XL"
 APPPATH = "44'/594'"
 
 else

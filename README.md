@@ -9,7 +9,7 @@
 _Please visit our website at [zondax.ch](zondax.ch)_
 
 ------------------
-This project contains the Kusama app (https://kusama.network/) for Ledger Nano S and X.
+This project contains the Dock app (https://dock.io/) for Ledger Nano S and X.
 
 - Ledger Nano S/X BOLOS app
 - Specs / Documentation
@@ -26,7 +26,7 @@ Please:
 - **Do not use a Ledger device with funds for development purposes.**
 - **Have a separate and marked device that is used ONLY for development and testing**
 
-# Polkadot  7.9020.x
+# Dock 1.27.x
 
 ## System
 
@@ -42,10 +42,6 @@ Please:
 |kill_storage |    |   |   | `Vec<Key>` keys <br/> |
 |kill_prefix |    |   |   | `Key` prefix <br/>`u32` _subkeys <br/> |
 |remark_with_event |    | :heavy_check_mark: |   | `Bytes` remark <br/> |
-
-## RandomnessCollectiveFlip
-
-Empty
 
 ## Scheduler
 
@@ -71,16 +67,6 @@ Empty
 | Name        | Light | XL | Nesting | Arguments |
 | :---------- |:------------:|:--------:|:--------:|:--------|
 |set |    | :heavy_check_mark: |   | `Compact<Moment>` now <br/> |
-
-## Indices
-
-| Name        | Light | XL | Nesting | Arguments |
-| :---------- |:------------:|:--------:|:--------:|:--------|
-|claim |    | :heavy_check_mark: |   | `AccountIndex` index <br/> |
-|transfer |    | :heavy_check_mark: |   | `AccountId` new <br/>`AccountIndex` index <br/> |
-|free |    | :heavy_check_mark: |   | `AccountIndex` index <br/> |
-|force_transfer |    | :heavy_check_mark: |   | `AccountId` new <br/>`AccountIndex` index <br/>`bool` freeze <br/> |
-|freeze |    | :heavy_check_mark: |   | `AccountIndex` index <br/> |
 
 ## Balances
 
@@ -247,25 +233,6 @@ Empty
 |reject_proposal |    | :heavy_check_mark: |   | `Compact<ProposalIndex>` proposal_id <br/> |
 |approve_proposal |    | :heavy_check_mark: |   | `Compact<ProposalIndex>` proposal_id <br/> |
 
-## Claims
-
-| Name        | Light | XL | Nesting | Arguments |
-| :---------- |:------------:|:--------:|:--------:|:--------|
-|claim |    | :heavy_check_mark: |   | `AccountId` dest <br/>`EcdsaSignature` ethereum_signature <br/> |
-|mint_claim |    |   |   | `EthereumAddress` who <br/>`BalanceOf` value <br/>`Option<(BalanceOf,BalanceOf,BlockNumber)>` vesting_schedule <br/>`Option<StatementKind>` statement <br/> |
-|claim_attest |    | :heavy_check_mark: |   | `AccountId` dest <br/>`EcdsaSignature` ethereum_signature <br/>`Bytes` statement <br/> |
-|attest |    | :heavy_check_mark: |   | `Bytes` statement <br/> |
-|move_claim |    | :heavy_check_mark: |   | `EthereumAddress` old <br/>`EthereumAddress` new <br/>`Option<AccountId>` maybe_preclaim <br/> |
-
-## Vesting
-
-| Name        | Light | XL | Nesting | Arguments |
-| :---------- |:------------:|:--------:|:--------:|:--------|
-|vest |    | :heavy_check_mark: |   |  |
-|vest_other |    | :heavy_check_mark: |   | `LookupSource` target <br/> |
-|vested_transfer |    | :heavy_check_mark: |   | `LookupSource` target <br/>`VestingInfo` schedule <br/> |
-|force_vested_transfer |    | :heavy_check_mark: |   | `LookupSource` source <br/>`LookupSource` target <br/>`VestingInfo` schedule <br/> |
-
 ## Utility
 
 | Name        | Light | XL | Nesting | Arguments |
@@ -293,30 +260,6 @@ Empty
 |rename_sub |    |   |   | `LookupSource` sub <br/>`Data` data <br/> |
 |remove_sub |    | :heavy_check_mark: |   | `LookupSource` sub <br/> |
 |quit_sub |    | :heavy_check_mark: |   |  |
-
-## Proxy
-
-| Name        | Light | XL | Nesting | Arguments |
-| :---------- |:------------:|:--------:|:--------:|:--------|
-|proxy |    | :heavy_check_mark: | :heavy_check_mark: | `AccountId` real <br/>`Option<ProxyType>` force_proxy_type <br/>`Call` call <br/> |
-|add_proxy |    | :heavy_check_mark: |   | `AccountId` delegate <br/>`ProxyType` proxy_type <br/>`BlockNumber` delay <br/> |
-|remove_proxy |    | :heavy_check_mark: |   | `AccountId` delegate <br/>`ProxyType` proxy_type <br/>`BlockNumber` delay <br/> |
-|remove_proxies |    | :heavy_check_mark: |   |  |
-|anonymous |    | :heavy_check_mark: |   | `ProxyType` proxy_type <br/>`BlockNumber` delay <br/>`u16` index <br/> |
-|kill_anonymous |    | :heavy_check_mark: |   | `AccountId` spawner <br/>`ProxyType` proxy_type <br/>`u16` index <br/>`Compact<BlockNumber>` height <br/>`Compact<u32>` ext_index <br/> |
-|announce |    | :heavy_check_mark: |   | `AccountId` real <br/>`CallHashOf` call_hash <br/> |
-|remove_announcement |    | :heavy_check_mark: |   | `AccountId` real <br/>`CallHashOf` call_hash <br/> |
-|reject_announcement |    | :heavy_check_mark: |   | `AccountId` delegate <br/>`CallHashOf` call_hash <br/> |
-|proxy_announced |    | :heavy_check_mark: |   | `AccountId` delegate <br/>`AccountId` real <br/>`Option<ProxyType>` force_proxy_type <br/>`Call` call <br/> |
-
-## Multisig
-
-| Name        | Light | XL | Nesting | Arguments |
-| :---------- |:------------:|:--------:|:--------:|:--------|
-|as_multi_threshold_1 |    | :heavy_check_mark: | :heavy_check_mark: | `Vec<AccountId>` other_signatories <br/>`Call` call <br/> |
-|as_multi |    | :heavy_check_mark: | :heavy_check_mark: | `u16` threshold <br/>`Vec<AccountId>` other_signatories <br/>`Option<Timepoint>` maybe_timepoint <br/>`OpaqueCall` call <br/>`bool` store_call <br/>`Weight` max_weight <br/> |
-|approve_as_multi |    | :heavy_check_mark: | :heavy_check_mark: | `u16` threshold <br/>`Vec<AccountId>` other_signatories <br/>`Option<Timepoint>` maybe_timepoint <br/>`[u8;32]` call_hash <br/>`Weight` max_weight <br/> |
-|cancel_as_multi |    | :heavy_check_mark: | :heavy_check_mark: | `u16` threshold <br/>`Vec<AccountId>` other_signatories <br/>`Timepoint` timepoint <br/>`[u8;32]` call_hash <br/> |
 
 ## Bounties
 
