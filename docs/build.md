@@ -159,12 +159,33 @@ Many of our integration tests expect the device to be configured with a known te
 
 ### Loading into your development device
 
+#### Build without Docker
+
+- Prerequisites
+  - Need appropriate GCC, CLANG and Ledger SDK. The required GCC and Clang can be found [here](https://ledger.readthedocs.io/en/latest/userspace/setup.html).
+  - The SDK is found [here](https://github.com/LedgerHQ/nanos-secure-sdk)
+  - Install python tools from [here](https://github.com/LedgerHQ/blue-loader-python)
+  - Make sure you have rust and `thumbv6m-none-eabi` installed (`rustup target add thumbv6m-none-eabi `)  
+
+- Building app
+  - Need these env variables set before building, `GCCPATH`, `CLANGPATH` and `BOLOS_SDK`. They should point to the above gcc, clang and Ledger SDK.
+  - Go to the [app](../app) directory and run `make`. Or `GCCPATH=<path of bin directory of above gcc>  CLANGPATH=<path of bin directory of above clang> BOLOS_SDK=<path of Ledger sdk> make` if above env vars are not set. 
+  - To clean up and do a fresh build, run `make clean` before running `make`
+
+- Installing the app
+  - Run `make load`.
+
+- Uninstalling the app
+  - Run `make delete`.
+
+#### Build with Docker
+
 The Makefile will build the firmware in a docker container and leave the binary in the correct directory.
 
 - Build
 
    ```
-   make COIN=DOCK               # Builds the app
+   make               # Builds the app
    ```
    ```
 

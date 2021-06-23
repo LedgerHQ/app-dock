@@ -52,7 +52,7 @@ typedef enum {
 
 #define COIN_AMOUNT_DECIMAL_PLACES          6
 
-#define COIN_GENESIS_HASH                   "91b171bb158e2d3848fa23a9f1c25182fb8e20313b2c1eb49219da7a70ce90c3"
+#define COIN_GENESIS_HASH                   "59d93e2ce42abb8aa52ca9a9e820233667104751f8f2980578a47a26a7235027"
 #define COIN_NAME                           "Dock"
 #define COIN_TICKER                         "DOCK"
 
