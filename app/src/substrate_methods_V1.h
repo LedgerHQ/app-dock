@@ -249,34 +249,6 @@ extern "C" {
         pd_CompactMoment_V1_t now;
     } pd_timestamp_set_V1_t;
 
-#define PD_CALL_INDICES_CLAIM_V1 0
-    typedef struct {
-        pd_AccountIndex_V1_t index;
-    } pd_indices_claim_V1_t;
-
-/*#define PD_CALL_INDICES_TRANSFER_V1 1
-    typedef struct {
-        pd_AccountId_V1_t new_;
-        pd_AccountIndex_V1_t index;
-    } pd_indices_transfer_V1_t;
-
-#define PD_CALL_INDICES_FREE_V1 2
-    typedef struct {
-        pd_AccountIndex_V1_t index;
-    } pd_indices_free_V1_t;
-
-#define PD_CALL_INDICES_FORCE_TRANSFER_V1 3
-    typedef struct {
-        pd_AccountId_V1_t new_;
-        pd_AccountIndex_V1_t index;
-        pd_bool_t freeze;
-    } pd_indices_force_transfer_V1_t;
-
-#define PD_CALL_INDICES_FREEZE_V1 4
-    typedef struct {
-        pd_AccountIndex_V1_t index;
-    } pd_indices_freeze_V1_t;*/
-
 #define PD_CALL_BALANCES_SET_BALANCE_V1 1
     typedef struct {
         pd_LookupSource_V1_t who;
@@ -701,61 +673,6 @@ extern "C" {
         pd_CompactProposalIndex_V1_t proposal_id;
     } pd_treasury_approve_proposal_V1_t;
 
-/*#define PD_CALL_CLAIMS_CLAIM_V1 0
-    typedef struct {
-        pd_AccountId_V1_t dest;
-        pd_EcdsaSignature_V1_t ethereum_signature;
-    } pd_claims_claim_V1_t;
-
-#define PD_CALL_CLAIMS_MINT_CLAIM_V1 1
-    typedef struct {
-        pd_EthereumAddress_V1_t who;
-        pd_BalanceOf_t value;
-        pd_OptionTupleBalanceOfBalanceOfBlockNumber_V1_t vesting_schedule;
-        pd_OptionStatementKind_V1_t statement;
-    } pd_claims_mint_claim_V1_t;
-
-#define PD_CALL_CLAIMS_CLAIM_ATTEST_V1 2
-    typedef struct {
-        pd_AccountId_V1_t dest;
-        pd_EcdsaSignature_V1_t ethereum_signature;
-        pd_Bytes_t statement;
-    } pd_claims_claim_attest_V1_t;
-
-#define PD_CALL_CLAIMS_ATTEST_V1 3
-    typedef struct {
-        pd_Bytes_t statement;
-    } pd_claims_attest_V1_t;
-
-#define PD_CALL_CLAIMS_MOVE_CLAIM_V1 4
-    typedef struct {
-        pd_EthereumAddress_V1_t old;
-        pd_EthereumAddress_V1_t new_;
-        pd_OptionAccountId_V1_t maybe_preclaim;
-    } pd_claims_move_claim_V1_t;
-
-#define PD_CALL_VESTING_VEST_V1 0
-    typedef struct {
-    } pd_vesting_vest_V1_t;
-
-#define PD_CALL_VESTING_VEST_OTHER_V1 1
-    typedef struct {
-        pd_LookupSource_V1_t target;
-    } pd_vesting_vest_other_V1_t;
-
-#define PD_CALL_VESTING_VESTED_TRANSFER_V1 2
-    typedef struct {
-        pd_LookupSource_V1_t target;
-        pd_VestingInfo_V1_t schedule;
-    } pd_vesting_vested_transfer_V1_t;
-
-#define PD_CALL_VESTING_FORCE_VESTED_TRANSFER_V1 3
-    typedef struct {
-        pd_LookupSource_V1_t source;
-        pd_LookupSource_V1_t target;
-        pd_VestingInfo_V1_t schedule;
-    } pd_vesting_force_vested_transfer_V1_t;*/
-
 #define PD_CALL_UTILITY_AS_DERIVATIVE_V1 1
     typedef struct {
         pd_u16_t index;
@@ -839,109 +756,9 @@ extern "C" {
         pd_LookupSource_V1_t sub;
     } pd_identity_remove_sub_V1_t;
 
-/*#define PD_CALL_IDENTITY_QUIT_SUB_V1 14
+#define PD_CALL_IDENTITY_QUIT_SUB_V1 14
     typedef struct {
     } pd_identity_quit_sub_V1_t;
-
-#define PD_CALL_PROXY_PROXY_V1 0
-    typedef struct {
-        pd_AccountId_V1_t real;
-        pd_OptionProxyType_V1_t force_proxy_type;
-        pd_Call_t call;
-    } pd_proxy_proxy_V1_t;
-
-#define PD_CALL_PROXY_ADD_PROXY_V1 1
-    typedef struct {
-        pd_AccountId_V1_t delegate;
-        pd_ProxyType_V1_t proxy_type;
-        pd_BlockNumber_t delay;
-    } pd_proxy_add_proxy_V1_t;
-
-#define PD_CALL_PROXY_REMOVE_PROXY_V1 2
-    typedef struct {
-        pd_AccountId_V1_t delegate;
-        pd_ProxyType_V1_t proxy_type;
-        pd_BlockNumber_t delay;
-    } pd_proxy_remove_proxy_V1_t;
-
-#define PD_CALL_PROXY_REMOVE_PROXIES_V1 3
-    typedef struct {
-    } pd_proxy_remove_proxies_V1_t;
-
-#define PD_CALL_PROXY_ANONYMOUS_V1 4
-    typedef struct {
-        pd_ProxyType_V1_t proxy_type;
-        pd_BlockNumber_t delay;
-        pd_u16_t index;
-    } pd_proxy_anonymous_V1_t;
-
-#define PD_CALL_PROXY_KILL_ANONYMOUS_V1 5
-    typedef struct {
-        pd_AccountId_V1_t spawner;
-        pd_ProxyType_V1_t proxy_type;
-        pd_u16_t index;
-        pd_CompactBlockNumber_t height;
-        pd_Compactu32_t ext_index;
-    } pd_proxy_kill_anonymous_V1_t;
-
-#define PD_CALL_PROXY_ANNOUNCE_V1 6
-    typedef struct {
-        pd_AccountId_V1_t real;
-        pd_CallHashOf_V1_t call_hash;
-    } pd_proxy_announce_V1_t;
-
-#define PD_CALL_PROXY_REMOVE_ANNOUNCEMENT_V1 7
-    typedef struct {
-        pd_AccountId_V1_t real;
-        pd_CallHashOf_V1_t call_hash;
-    } pd_proxy_remove_announcement_V1_t;
-
-#define PD_CALL_PROXY_REJECT_ANNOUNCEMENT_V1 8
-    typedef struct {
-        pd_AccountId_V1_t delegate;
-        pd_CallHashOf_V1_t call_hash;
-    } pd_proxy_reject_announcement_V1_t;
-
-#define PD_CALL_PROXY_PROXY_ANNOUNCED_V1 9
-    typedef struct {
-        pd_AccountId_V1_t delegate;
-        pd_AccountId_V1_t real;
-        pd_OptionProxyType_V1_t force_proxy_type;
-        pd_Call_t call;
-    } pd_proxy_proxy_announced_V1_t;
-
-#define PD_CALL_MULTISIG_AS_MULTI_THRESHOLD_1_V1 0
-    typedef struct {
-        pd_VecAccountId_V1_t other_signatories;
-        pd_Call_t call;
-    } pd_multisig_as_multi_threshold_1_V1_t;
-
-#define PD_CALL_MULTISIG_AS_MULTI_V1 1
-    typedef struct {
-        pd_u16_t threshold;
-        pd_VecAccountId_V1_t other_signatories;
-        pd_OptionTimepoint_V1_t maybe_timepoint;
-        pd_OpaqueCall_V1_t call;
-        pd_bool_t store_call;
-        pd_Weight_V1_t max_weight;
-    } pd_multisig_as_multi_V1_t;
-
-#define PD_CALL_MULTISIG_APPROVE_AS_MULTI_V1 2
-    typedef struct {
-        pd_u16_t threshold;
-        pd_VecAccountId_V1_t other_signatories;
-        pd_OptionTimepoint_V1_t maybe_timepoint;
-        pd_u8_array_32_V1_t call_hash;
-        pd_Weight_V1_t max_weight;
-    } pd_multisig_approve_as_multi_V1_t;
-
-#define PD_CALL_MULTISIG_CANCEL_AS_MULTI_V1 3
-    typedef struct {
-        pd_u16_t threshold;
-        pd_VecAccountId_V1_t other_signatories;
-        pd_Timepoint_V1_t timepoint;
-        pd_u8_array_32_V1_t call_hash;
-    } pd_multisig_cancel_as_multi_V1_t;*/
 
 #define PD_CALL_BOUNTIES_PROPOSE_BOUNTY_V1 0
     typedef struct {
@@ -1071,11 +888,6 @@ extern "C" {
         pd_babe_report_equivocation_V1_t babe_report_equivocation_V1;
         pd_babe_report_equivocation_unsigned_V1_t babe_report_equivocation_unsigned_V1;
         pd_timestamp_set_V1_t timestamp_set_V1;
-//        pd_indices_claim_V1_t indices_claim_V1;
-//        pd_indices_transfer_V1_t indices_transfer_V1;
-//        pd_indices_free_V1_t indices_free_V1;
-//        pd_indices_force_transfer_V1_t indices_force_transfer_V1;
-//        pd_indices_freeze_V1_t indices_freeze_V1;
         pd_balances_set_balance_V1_t balances_set_balance_V1;
         pd_balances_force_transfer_V1_t balances_force_transfer_V1;
         pd_authorship_set_uncles_V1_t authorship_set_uncles_V1;
@@ -1151,15 +963,6 @@ extern "C" {
         pd_treasury_propose_spend_V1_t treasury_propose_spend_V1;
         pd_treasury_reject_proposal_V1_t treasury_reject_proposal_V1;
         pd_treasury_approve_proposal_V1_t treasury_approve_proposal_V1;
-//        pd_claims_claim_V1_t claims_claim_V1;
-//        pd_claims_mint_claim_V1_t claims_mint_claim_V1;
-//        pd_claims_claim_attest_V1_t claims_claim_attest_V1;
-//        pd_claims_attest_V1_t claims_attest_V1;
-//        pd_claims_move_claim_V1_t claims_move_claim_V1;
-//        pd_vesting_vest_V1_t vesting_vest_V1;
-//        pd_vesting_vest_other_V1_t vesting_vest_other_V1;
-//        pd_vesting_vested_transfer_V1_t vesting_vested_transfer_V1;
-//        pd_vesting_force_vested_transfer_V1_t vesting_force_vested_transfer_V1;
         pd_utility_as_derivative_V1_t utility_as_derivative_V1;
         pd_identity_add_registrar_V1_t identity_add_registrar_V1;
         pd_identity_set_identity_V1_t identity_set_identity_V1;
@@ -1176,20 +979,6 @@ extern "C" {
         pd_identity_rename_sub_V1_t identity_rename_sub_V1;
         pd_identity_remove_sub_V1_t identity_remove_sub_V1;
         pd_identity_quit_sub_V1_t identity_quit_sub_V1;
-//        pd_proxy_proxy_V1_t proxy_proxy_V1;
-//        pd_proxy_add_proxy_V1_t proxy_add_proxy_V1;
-//        pd_proxy_remove_proxy_V1_t proxy_remove_proxy_V1;
-//        pd_proxy_remove_proxies_V1_t proxy_remove_proxies_V1;
-//        pd_proxy_anonymous_V1_t proxy_anonymous_V1;
-//        pd_proxy_kill_anonymous_V1_t proxy_kill_anonymous_V1;
-//        pd_proxy_announce_V1_t proxy_announce_V1;
-//        pd_proxy_remove_announcement_V1_t proxy_remove_announcement_V1;
-//        pd_proxy_reject_announcement_V1_t proxy_reject_announcement_V1;
-//        pd_proxy_proxy_announced_V1_t proxy_proxy_announced_V1;
-//        pd_multisig_as_multi_threshold_1_V1_t multisig_as_multi_threshold_1_V1;
-//        pd_multisig_as_multi_V1_t multisig_as_multi_V1;
-//        pd_multisig_approve_as_multi_V1_t multisig_approve_as_multi_V1;
-//        pd_multisig_cancel_as_multi_V1_t multisig_cancel_as_multi_V1;
         pd_bounties_propose_bounty_V1_t bounties_propose_bounty_V1;
         pd_bounties_approve_bounty_V1_t bounties_approve_bounty_V1;
         pd_bounties_propose_curator_V1_t bounties_propose_curator_V1;

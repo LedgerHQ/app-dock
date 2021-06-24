@@ -165,7 +165,7 @@ Many of our integration tests expect the device to be configured with a known te
   - Need appropriate GCC, CLANG and Ledger SDK. The required GCC and Clang can be found [here](https://ledger.readthedocs.io/en/latest/userspace/setup.html).
   - The SDK is found [here](https://github.com/LedgerHQ/nanos-secure-sdk)
   - Install python tools from [here](https://github.com/LedgerHQ/blue-loader-python)
-  - Make sure you have rust and `thumbv6m-none-eabi` installed (`rustup target add thumbv6m-none-eabi `)  
+  - Make sure you have rust and `thumbv6m-none-eabi` installed (`rustup target add thumbv6m-none-eabi`)  
 
 - Building app
   - Need these env variables set before building, `GCCPATH`, `CLANGPATH` and `BOLOS_SDK`. They should point to the above gcc, clang and Ledger SDK.

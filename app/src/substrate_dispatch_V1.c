@@ -1451,21 +1451,6 @@ parser_error_t _readMethod_V1(
     case 256: /* module 1 call 0 */
         CHECK_ERROR(_readMethod_timestamp_set_V1(c, &method->basic.timestamp_set_V1))
         break;
-    /*case 1024: *//* module 4 call 0 *//*
-        CHECK_ERROR(_readMethod_indices_claim_V1(c, &method->basic.indices_claim_V1))
-        break;
-    case 1025: *//* module 4 call 1 *//*
-        CHECK_ERROR(_readMethod_indices_transfer_V1(c, &method->basic.indices_transfer_V1))
-        break;
-    case 1026: *//* module 4 call 2 *//*
-        CHECK_ERROR(_readMethod_indices_free_V1(c, &method->basic.indices_free_V1))
-        break;
-    case 1027: *//* module 4 call 3 *//*
-        CHECK_ERROR(_readMethod_indices_force_transfer_V1(c, &method->basic.indices_force_transfer_V1))
-        break;
-    case 1028: *//* module 4 call 4 *//*
-        CHECK_ERROR(_readMethod_indices_freeze_V1(c, &method->basic.indices_freeze_V1))
-        break;*/
     case 513: /* module 2 call 1 */
         CHECK_ERROR(_readMethod_balances_set_balance_V1(c, &method->basic.balances_set_balance_V1))
         break;
@@ -1691,33 +1676,6 @@ parser_error_t _readMethod_V1(
     case 8450: /* module 33 call 2 */
         CHECK_ERROR(_readMethod_treasury_approve_proposal_V1(c, &method->basic.treasury_approve_proposal_V1))
         break;
-    /*case 6144: *//* module 24 call 0 *//*
-        CHECK_ERROR(_readMethod_claims_claim_V1(c, &method->basic.claims_claim_V1))
-        break;
-    case 6145: *//* module 24 call 1 *//*
-        CHECK_ERROR(_readMethod_claims_mint_claim_V1(c, &method->basic.claims_mint_claim_V1))
-        break;
-    case 6146: *//* module 24 call 2 *//*
-        CHECK_ERROR(_readMethod_claims_claim_attest_V1(c, &method->basic.claims_claim_attest_V1))
-        break;
-    case 6147: *//* module 24 call 3 *//*
-        CHECK_ERROR(_readMethod_claims_attest_V1(c, &method->basic.claims_attest_V1))
-        break;
-    case 6148: *//* module 24 call 4 *//*
-        CHECK_ERROR(_readMethod_claims_move_claim_V1(c, &method->basic.claims_move_claim_V1))
-        break;
-    case 6400: *//* module 25 call 0 *//*
-        CHECK_ERROR(_readMethod_vesting_vest_V1(c, &method->basic.vesting_vest_V1))
-        break;
-    case 6401: *//* module 25 call 1 *//*
-        CHECK_ERROR(_readMethod_vesting_vest_other_V1(c, &method->basic.vesting_vest_other_V1))
-        break;
-    case 6402: *//* module 25 call 2 *//*
-        CHECK_ERROR(_readMethod_vesting_vested_transfer_V1(c, &method->basic.vesting_vested_transfer_V1))
-        break;
-    case 6403: *//* module 25 call 3 *//*
-        CHECK_ERROR(_readMethod_vesting_force_vested_transfer_V1(c, &method->basic.vesting_force_vested_transfer_V1))
-        break;*/
     case 2049: /* module 8 call 1 */
         CHECK_ERROR(_readMethod_utility_as_derivative_V1(c, &method->basic.utility_as_derivative_V1))
         break;
@@ -1766,48 +1724,6 @@ parser_error_t _readMethod_V1(
     case 9742: /* module 38 call 14 */
         CHECK_ERROR(_readMethod_identity_quit_sub_V1(c, &method->basic.identity_quit_sub_V1))
         break;
-    /*case 7424: *//* module 29 call 0 *//*
-        CHECK_ERROR(_readMethod_proxy_proxy_V1(c, &method->basic.proxy_proxy_V1))
-        break;
-    case 7425: *//* module 29 call 1 *//*
-        CHECK_ERROR(_readMethod_proxy_add_proxy_V1(c, &method->basic.proxy_add_proxy_V1))
-        break;
-    case 7426: *//* module 29 call 2 *//*
-        CHECK_ERROR(_readMethod_proxy_remove_proxy_V1(c, &method->basic.proxy_remove_proxy_V1))
-        break;
-    case 7427: *//* module 29 call 3 *//*
-        CHECK_ERROR(_readMethod_proxy_remove_proxies_V1(c, &method->basic.proxy_remove_proxies_V1))
-        break;
-    case 7428: *//* module 29 call 4 *//*
-        CHECK_ERROR(_readMethod_proxy_anonymous_V1(c, &method->basic.proxy_anonymous_V1))
-        break;
-    case 7429: *//* module 29 call 5 *//*
-        CHECK_ERROR(_readMethod_proxy_kill_anonymous_V1(c, &method->basic.proxy_kill_anonymous_V1))
-        break;
-    case 7430: *//* module 29 call 6 *//*
-        CHECK_ERROR(_readMethod_proxy_announce_V1(c, &method->basic.proxy_announce_V1))
-        break;
-    case 7431: *//* module 29 call 7 *//*
-        CHECK_ERROR(_readMethod_proxy_remove_announcement_V1(c, &method->basic.proxy_remove_announcement_V1))
-        break;
-    case 7432: *//* module 29 call 8 *//*
-        CHECK_ERROR(_readMethod_proxy_reject_announcement_V1(c, &method->basic.proxy_reject_announcement_V1))
-        break;
-    case 7433: *//* module 29 call 9 *//*
-        CHECK_ERROR(_readMethod_proxy_proxy_announced_V1(c, &method->basic.proxy_proxy_announced_V1))
-        break;
-    case 7680: *//* module 30 call 0 *//*
-        CHECK_ERROR(_readMethod_multisig_as_multi_threshold_1_V1(c, &method->basic.multisig_as_multi_threshold_1_V1))
-        break;
-    case 7681: *//* module 30 call 1 *//*
-        CHECK_ERROR(_readMethod_multisig_as_multi_V1(c, &method->basic.multisig_as_multi_V1))
-        break;
-    case 7682: *//* module 30 call 2 *//*
-        CHECK_ERROR(_readMethod_multisig_approve_as_multi_V1(c, &method->basic.multisig_approve_as_multi_V1))
-        break;
-    case 7683: *//* module 30 call 3 *//*
-        CHECK_ERROR(_readMethod_multisig_cancel_as_multi_V1(c, &method->basic.multisig_cancel_as_multi_V1))
-        break;*/
     case 8704: /* module 34 call 0 */
         CHECK_ERROR(_readMethod_bounties_propose_bounty_V1(c, &method->basic.bounties_propose_bounty_V1))
         break;
@@ -2011,16 +1927,6 @@ const char* _getMethod_Name_V1(uint8_t moduleIdx, uint8_t callIdx)
         return STR_ME_REPORT_EQUIVOCATION_UNSIGNED;
     case 256: /* module 1 call 0 */
         return STR_ME_SET;
-    /*case 1024: *//* module 4 call 0 *//*
-        return STR_ME_CLAIM;
-    case 1025: *//* module 4 call 1 *//*
-        return STR_ME_TRANSFER;
-    case 1026: *//* module 4 call 2 *//*
-        return STR_ME_FREE;
-    case 1027: *//* module 4 call 3 *//*
-        return STR_ME_FORCE_TRANSFER;
-    case 1028: *//* module 4 call 4 *//*
-        return STR_ME_FREEZE;*/
     case 513: /* module 2 call 1 */
         return STR_ME_SET_BALANCE;
     case 514: /* module 2 call 2 */
@@ -2171,24 +2077,6 @@ const char* _getMethod_Name_V1(uint8_t moduleIdx, uint8_t callIdx)
         return STR_ME_REJECT_PROPOSAL;
     case 8450: /* module 33 call 2 */
         return STR_ME_APPROVE_PROPOSAL;
-    /*case 6144: *//* module 24 call 0 *//*
-        return STR_ME_CLAIM;
-    case 6145: *//* module 24 call 1 *//*
-        return STR_ME_MINT_CLAIM;
-    case 6146: *//* module 24 call 2 *//*
-        return STR_ME_CLAIM_ATTEST;
-    case 6147: *//* module 24 call 3 *//*
-        return STR_ME_ATTEST;
-    case 6148: *//* module 24 call 4 *//*
-        return STR_ME_MOVE_CLAIM;
-    case 6400: *//* module 25 call 0 *//*
-        return STR_ME_VEST;
-    case 6401: *//* module 25 call 1 *//*
-        return STR_ME_VEST_OTHER;
-    case 6402: *//* module 25 call 2 *//*
-        return STR_ME_VESTED_TRANSFER;
-    case 6403: *//* module 25 call 3 *//*
-        return STR_ME_FORCE_VESTED_TRANSFER;*/
     case 2049: /* module 8 call 1 */
         return STR_ME_AS_DERIVATIVE;
     case 9728: /* module 38 call 0 */
@@ -2221,34 +2109,6 @@ const char* _getMethod_Name_V1(uint8_t moduleIdx, uint8_t callIdx)
         return STR_ME_REMOVE_SUB;
     case 9742: /* module 38 call 14 */
         return STR_ME_QUIT_SUB;
-    /*case 7424: *//* module 29 call 0 *//*
-        return STR_ME_PROXY;
-    case 7425: *//* module 29 call 1 *//*
-        return STR_ME_ADD_PROXY;
-    case 7426: *//* module 29 call 2 *//*
-        return STR_ME_REMOVE_PROXY;
-    case 7427: *//* module 29 call 3 *//*
-        return STR_ME_REMOVE_PROXIES;
-    case 7428: *//* module 29 call 4 *//*
-        return STR_ME_ANONYMOUS;
-    case 7429: *//* module 29 call 5 *//*
-        return STR_ME_KILL_ANONYMOUS;
-    case 7430: *//* module 29 call 6 *//*
-        return STR_ME_ANNOUNCE;
-    case 7431: *//* module 29 call 7 *//*
-        return STR_ME_REMOVE_ANNOUNCEMENT;
-    case 7432: *//* module 29 call 8 *//*
-        return STR_ME_REJECT_ANNOUNCEMENT;
-    case 7433: *//* module 29 call 9 *//*
-        return STR_ME_PROXY_ANNOUNCED;
-    case 7680: *//* module 30 call 0 *//*
-        return STR_ME_AS_MULTI_THRESHOLD_1;
-    case 7681: *//* module 30 call 1 *//*
-        return STR_ME_AS_MULTI;
-    case 7682: *//* module 30 call 2 *//*
-        return STR_ME_APPROVE_AS_MULTI;
-    case 7683: *//* module 30 call 3 *//*
-        return STR_ME_CANCEL_AS_MULTI;*/
     case 8704: /* module 34 call 0 */
         return STR_ME_PROPOSE_BOUNTY;
     case 8705: /* module 34 call 1 */
@@ -2364,16 +2224,6 @@ uint8_t _getMethod_NumItems_V1(uint8_t moduleIdx, uint8_t callIdx)
         return 2;
     case 256: /* module 1 call 0 */
         return 1;
-    /*case 1024: *//* module 4 call 0 *//*
-        return 1;
-    case 1025: *//* module 4 call 1 *//*
-        return 2;
-    case 1026: *//* module 4 call 2 *//*
-        return 1;
-    case 1027: *//* module 4 call 3 *//*
-        return 3;
-    case 1028: *//* module 4 call 4 *//*
-        return 1;*/
     case 513: /* module 2 call 1 */
         return 3;
     case 514: /* module 2 call 2 */
@@ -2524,24 +2374,6 @@ uint8_t _getMethod_NumItems_V1(uint8_t moduleIdx, uint8_t callIdx)
         return 1;
     case 8450: /* module 33 call 2 */
         return 1;
-    /*case 6144: *//* module 24 call 0 *//*
-        return 2;
-    case 6145: *//* module 24 call 1 *//*
-        return 4;
-    case 6146: *//* module 24 call 2 *//*
-        return 3;
-    case 6147: *//* module 24 call 3 *//*
-        return 1;
-    case 6148: *//* module 24 call 4 *//*
-        return 3;
-    case 6400: *//* module 25 call 0 *//*
-        return 0;
-    case 6401: *//* module 25 call 1 *//*
-        return 1;
-    case 6402: *//* module 25 call 2 *//*
-        return 2;
-    case 6403: *//* module 25 call 3 *//*
-        return 3;*/
     case 2049: /* module 8 call 1 */
         return 2;
     case 9728: /* module 38 call 0 */
@@ -2574,34 +2406,6 @@ uint8_t _getMethod_NumItems_V1(uint8_t moduleIdx, uint8_t callIdx)
         return 1;
     case 9742: /* module 38 call 14 */
         return 0;
-    /*case 7424: *//* module 29 call 0 *//*
-        return 3;
-    case 7425: *//* module 29 call 1 *//*
-        return 3;
-    case 7426: *//* module 29 call 2 *//*
-        return 3;
-    case 7427: *//* module 29 call 3 *//*
-        return 0;
-    case 7428: *//* module 29 call 4 *//*
-        return 3;
-    case 7429: *//* module 29 call 5 *//*
-        return 5;
-    case 7430: *//* module 29 call 6 *//*
-        return 2;
-    case 7431: *//* module 29 call 7 *//*
-        return 2;
-    case 7432: *//* module 29 call 8 *//*
-        return 2;
-    case 7433: *//* module 29 call 9 *//*
-        return 4;
-    case 7680: *//* module 30 call 0 *//*
-        return 2;
-    case 7681: *//* module 30 call 1 *//*
-        return 6;
-    case 7682: *//* module 30 call 2 *//*
-        return 5;
-    case 7683: *//* module 30 call 3 *//*
-        return 4;*/
     case 8704: /* module 34 call 0 */
         return 2;
     case 8705: /* module 34 call 1 */
@@ -4562,71 +4366,6 @@ parser_error_t _getMethod_ItemValue_V1(
         default:
             return parser_no_data;
         }
-    /*case 1024: *//* module 4 call 0 *//*
-        switch (itemIdx) {
-        case 0: *//* indices_claim_V1 - index *//*;
-            return _toStringAccountIndex_V1(
-                &m->basic.indices_claim_V1.index,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        default:
-            return parser_no_data;
-        }
-    case 1025: *//* module 4 call 1 *//*
-        switch (itemIdx) {
-        case 0: *//* indices_transfer_V1 - new_ *//*;
-            return _toStringAccountId_V1(
-                &m->basic.indices_transfer_V1.new_,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 1: *//* indices_transfer_V1 - index *//*;
-            return _toStringAccountIndex_V1(
-                &m->basic.indices_transfer_V1.index,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        default:
-            return parser_no_data;
-        }
-    case 1026: *//* module 4 call 2 *//*
-        switch (itemIdx) {
-        case 0: *//* indices_free_V1 - index *//*;
-            return _toStringAccountIndex_V1(
-                &m->basic.indices_free_V1.index,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        default:
-            return parser_no_data;
-        }
-    case 1027: *//* module 4 call 3 *//*
-        switch (itemIdx) {
-        case 0: *//* indices_force_transfer_V1 - new_ *//*;
-            return _toStringAccountId_V1(
-                &m->basic.indices_force_transfer_V1.new_,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 1: *//* indices_force_transfer_V1 - index *//*;
-            return _toStringAccountIndex_V1(
-                &m->basic.indices_force_transfer_V1.index,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 2: *//* indices_force_transfer_V1 - freeze *//*;
-            return _toStringbool(
-                &m->basic.indices_force_transfer_V1.freeze,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        default:
-            return parser_no_data;
-        }
-    case 1028: *//* module 4 call 4 *//*
-        switch (itemIdx) {
-        case 0: *//* indices_freeze_V1 - index *//*;
-            return _toStringAccountIndex_V1(
-                &m->basic.indices_freeze_V1.index,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        default:
-            return parser_no_data;
-        }*/
     case 513: /* module 2 call 1 */
         switch (itemIdx) {
         case 0: /* balances_set_balance_V1 - who */;
@@ -5622,146 +5361,6 @@ parser_error_t _getMethod_ItemValue_V1(
         default:
             return parser_no_data;
         }
-    /*case 6144: *//* module 24 call 0 *//*
-        switch (itemIdx) {
-        case 0: *//* claims_claim_V1 - dest *//*;
-            return _toStringAccountId_V1(
-                &m->basic.claims_claim_V1.dest,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 1: *//* claims_claim_V1 - ethereum_signature *//*;
-            return _toStringEcdsaSignature_V1(
-                &m->basic.claims_claim_V1.ethereum_signature,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        default:
-            return parser_no_data;
-        }
-    case 6145: *//* module 24 call 1 *//*
-        switch (itemIdx) {
-        case 0: *//* claims_mint_claim_V1 - who *//*;
-            return _toStringEthereumAddress_V1(
-                &m->basic.claims_mint_claim_V1.who,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 1: *//* claims_mint_claim_V1 - value *//*;
-            return _toStringBalanceOf(
-                &m->basic.claims_mint_claim_V1.value,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 2: *//* claims_mint_claim_V1 - vesting_schedule *//*;
-            return _toStringOptionTupleBalanceOfBalanceOfBlockNumber_V1(
-                &m->basic.claims_mint_claim_V1.vesting_schedule,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 3: *//* claims_mint_claim_V1 - statement *//*;
-            return _toStringOptionStatementKind_V1(
-                &m->basic.claims_mint_claim_V1.statement,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        default:
-            return parser_no_data;
-        }
-    case 6146: *//* module 24 call 2 *//*
-        switch (itemIdx) {
-        case 0: *//* claims_claim_attest_V1 - dest *//*;
-            return _toStringAccountId_V1(
-                &m->basic.claims_claim_attest_V1.dest,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 1: *//* claims_claim_attest_V1 - ethereum_signature *//*;
-            return _toStringEcdsaSignature_V1(
-                &m->basic.claims_claim_attest_V1.ethereum_signature,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 2: *//* claims_claim_attest_V1 - statement *//*;
-            return _toStringBytes(
-                &m->basic.claims_claim_attest_V1.statement,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        default:
-            return parser_no_data;
-        }
-    case 6147: *//* module 24 call 3 *//*
-        switch (itemIdx) {
-        case 0: *//* claims_attest_V1 - statement *//*;
-            return _toStringBytes(
-                &m->basic.claims_attest_V1.statement,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        default:
-            return parser_no_data;
-        }
-    case 6148: *//* module 24 call 4 *//*
-        switch (itemIdx) {
-        case 0: *//* claims_move_claim_V1 - old *//*;
-            return _toStringEthereumAddress_V1(
-                &m->basic.claims_move_claim_V1.old,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 1: *//* claims_move_claim_V1 - new_ *//*;
-            return _toStringEthereumAddress_V1(
-                &m->basic.claims_move_claim_V1.new_,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 2: *//* claims_move_claim_V1 - maybe_preclaim *//*;
-            return _toStringOptionAccountId_V1(
-                &m->basic.claims_move_claim_V1.maybe_preclaim,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        default:
-            return parser_no_data;
-        }
-    case 6400: *//* module 25 call 0 *//*
-        switch (itemIdx) {
-        default:
-            return parser_no_data;
-        }
-    case 6401: *//* module 25 call 1 *//*
-        switch (itemIdx) {
-        case 0: *//* vesting_vest_other_V1 - target *//*;
-            return _toStringLookupSource_V1(
-                &m->basic.vesting_vest_other_V1.target,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        default:
-            return parser_no_data;
-        }
-    case 6402: *//* module 25 call 2 *//*
-        switch (itemIdx) {
-        case 0: *//* vesting_vested_transfer_V1 - target *//*;
-            return _toStringLookupSource_V1(
-                &m->basic.vesting_vested_transfer_V1.target,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 1: *//* vesting_vested_transfer_V1 - schedule *//*;
-            return _toStringVestingInfo_V1(
-                &m->basic.vesting_vested_transfer_V1.schedule,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        default:
-            return parser_no_data;
-        }
-    case 6403: *//* module 25 call 3 *//*
-        switch (itemIdx) {
-        case 0: *//* vesting_force_vested_transfer_V1 - source *//*;
-            return _toStringLookupSource_V1(
-                &m->basic.vesting_force_vested_transfer_V1.source,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 1: *//* vesting_force_vested_transfer_V1 - target *//*;
-            return _toStringLookupSource_V1(
-                &m->basic.vesting_force_vested_transfer_V1.target,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 2: *//* vesting_force_vested_transfer_V1 - schedule *//*;
-            return _toStringVestingInfo_V1(
-                &m->basic.vesting_force_vested_transfer_V1.schedule,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        default:
-            return parser_no_data;
-        }*/
     case 2049: /* module 8 call 1 */
         switch (itemIdx) {
         case 0: /* utility_as_derivative_V1 - index */;
@@ -5957,296 +5556,6 @@ parser_error_t _getMethod_ItemValue_V1(
         default:
             return parser_no_data;
         }
-    /*case 7424: *//* module 29 call 0 *//*
-        switch (itemIdx) {
-        case 0: *//* proxy_proxy_V1 - real *//*;
-            return _toStringAccountId_V1(
-                &m->basic.proxy_proxy_V1.real,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 1: *//* proxy_proxy_V1 - force_proxy_type *//*;
-            return _toStringOptionProxyType_V1(
-                &m->basic.proxy_proxy_V1.force_proxy_type,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 2: *//* proxy_proxy_V1 - call *//*;
-            return _toStringCall(
-                &m->basic.proxy_proxy_V1.call,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        default:
-            return parser_no_data;
-        }
-    case 7425: *//* module 29 call 1 *//*
-        switch (itemIdx) {
-        case 0: *//* proxy_add_proxy_V1 - delegate *//*;
-            return _toStringAccountId_V1(
-                &m->basic.proxy_add_proxy_V1.delegate,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 1: *//* proxy_add_proxy_V1 - proxy_type *//*;
-            return _toStringProxyType_V1(
-                &m->basic.proxy_add_proxy_V1.proxy_type,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 2: *//* proxy_add_proxy_V1 - delay *//*;
-            return _toStringBlockNumber(
-                &m->basic.proxy_add_proxy_V1.delay,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        default:
-            return parser_no_data;
-        }
-    case 7426: *//* module 29 call 2 *//*
-        switch (itemIdx) {
-        case 0: *//* proxy_remove_proxy_V1 - delegate *//*;
-            return _toStringAccountId_V1(
-                &m->basic.proxy_remove_proxy_V1.delegate,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 1: *//* proxy_remove_proxy_V1 - proxy_type *//*;
-            return _toStringProxyType_V1(
-                &m->basic.proxy_remove_proxy_V1.proxy_type,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 2: *//* proxy_remove_proxy_V1 - delay *//*;
-            return _toStringBlockNumber(
-                &m->basic.proxy_remove_proxy_V1.delay,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        default:
-            return parser_no_data;
-        }
-    case 7427: *//* module 29 call 3 *//*
-        switch (itemIdx) {
-        default:
-            return parser_no_data;
-        }
-    case 7428: *//* module 29 call 4 *//*
-        switch (itemIdx) {
-        case 0: *//* proxy_anonymous_V1 - proxy_type *//*;
-            return _toStringProxyType_V1(
-                &m->basic.proxy_anonymous_V1.proxy_type,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 1: *//* proxy_anonymous_V1 - delay *//*;
-            return _toStringBlockNumber(
-                &m->basic.proxy_anonymous_V1.delay,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 2: *//* proxy_anonymous_V1 - index *//*;
-            return _toStringu16(
-                &m->basic.proxy_anonymous_V1.index,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        default:
-            return parser_no_data;
-        }
-    case 7429: *//* module 29 call 5 *//*
-        switch (itemIdx) {
-        case 0: *//* proxy_kill_anonymous_V1 - spawner *//*;
-            return _toStringAccountId_V1(
-                &m->basic.proxy_kill_anonymous_V1.spawner,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 1: *//* proxy_kill_anonymous_V1 - proxy_type *//*;
-            return _toStringProxyType_V1(
-                &m->basic.proxy_kill_anonymous_V1.proxy_type,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 2: *//* proxy_kill_anonymous_V1 - index *//*;
-            return _toStringu16(
-                &m->basic.proxy_kill_anonymous_V1.index,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 3: *//* proxy_kill_anonymous_V1 - height *//*;
-            return _toStringCompactBlockNumber(
-                &m->basic.proxy_kill_anonymous_V1.height,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 4: *//* proxy_kill_anonymous_V1 - ext_index *//*;
-            return _toStringCompactu32(
-                &m->basic.proxy_kill_anonymous_V1.ext_index,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        default:
-            return parser_no_data;
-        }
-    case 7430: *//* module 29 call 6 *//*
-        switch (itemIdx) {
-        case 0: *//* proxy_announce_V1 - real *//*;
-            return _toStringAccountId_V1(
-                &m->basic.proxy_announce_V1.real,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 1: *//* proxy_announce_V1 - call_hash *//*;
-            return _toStringCallHashOf_V1(
-                &m->basic.proxy_announce_V1.call_hash,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        default:
-            return parser_no_data;
-        }
-    case 7431: *//* module 29 call 7 *//*
-        switch (itemIdx) {
-        case 0: *//* proxy_remove_announcement_V1 - real *//*;
-            return _toStringAccountId_V1(
-                &m->basic.proxy_remove_announcement_V1.real,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 1: *//* proxy_remove_announcement_V1 - call_hash *//*;
-            return _toStringCallHashOf_V1(
-                &m->basic.proxy_remove_announcement_V1.call_hash,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        default:
-            return parser_no_data;
-        }
-    case 7432: *//* module 29 call 8 *//*
-        switch (itemIdx) {
-        case 0: *//* proxy_reject_announcement_V1 - delegate *//*;
-            return _toStringAccountId_V1(
-                &m->basic.proxy_reject_announcement_V1.delegate,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 1: *//* proxy_reject_announcement_V1 - call_hash *//*;
-            return _toStringCallHashOf_V1(
-                &m->basic.proxy_reject_announcement_V1.call_hash,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        default:
-            return parser_no_data;
-        }
-    case 7433: *//* module 29 call 9 *//*
-        switch (itemIdx) {
-        case 0: *//* proxy_proxy_announced_V1 - delegate *//*;
-            return _toStringAccountId_V1(
-                &m->basic.proxy_proxy_announced_V1.delegate,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 1: *//* proxy_proxy_announced_V1 - real *//*;
-            return _toStringAccountId_V1(
-                &m->basic.proxy_proxy_announced_V1.real,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 2: *//* proxy_proxy_announced_V1 - force_proxy_type *//*;
-            return _toStringOptionProxyType_V1(
-                &m->basic.proxy_proxy_announced_V1.force_proxy_type,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 3: *//* proxy_proxy_announced_V1 - call *//*;
-            return _toStringCall(
-                &m->basic.proxy_proxy_announced_V1.call,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        default:
-            return parser_no_data;
-        }
-    case 7680: *//* module 30 call 0 *//*
-        switch (itemIdx) {
-        case 0: *//* multisig_as_multi_threshold_1_V1 - other_signatories *//*;
-            return _toStringVecAccountId_V1(
-                &m->basic.multisig_as_multi_threshold_1_V1.other_signatories,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 1: *//* multisig_as_multi_threshold_1_V1 - call *//*;
-            return _toStringCall(
-                &m->basic.multisig_as_multi_threshold_1_V1.call,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        default:
-            return parser_no_data;
-        }
-    case 7681: *//* module 30 call 1 *//*
-        switch (itemIdx) {
-        case 0: *//* multisig_as_multi_V1 - threshold *//*;
-            return _toStringu16(
-                &m->basic.multisig_as_multi_V1.threshold,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 1: *//* multisig_as_multi_V1 - other_signatories *//*;
-            return _toStringVecAccountId_V1(
-                &m->basic.multisig_as_multi_V1.other_signatories,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 2: *//* multisig_as_multi_V1 - maybe_timepoint *//*;
-            return _toStringOptionTimepoint_V1(
-                &m->basic.multisig_as_multi_V1.maybe_timepoint,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 3: *//* multisig_as_multi_V1 - call *//*;
-            return _toStringOpaqueCall_V1(
-                &m->basic.multisig_as_multi_V1.call,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 4: *//* multisig_as_multi_V1 - store_call *//*;
-            return _toStringbool(
-                &m->basic.multisig_as_multi_V1.store_call,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 5: *//* multisig_as_multi_V1 - max_weight *//*;
-            return _toStringWeight_V1(
-                &m->basic.multisig_as_multi_V1.max_weight,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        default:
-            return parser_no_data;
-        }
-    case 7682: *//* module 30 call 2 *//*
-        switch (itemIdx) {
-        case 0: *//* multisig_approve_as_multi_V1 - threshold *//*;
-            return _toStringu16(
-                &m->basic.multisig_approve_as_multi_V1.threshold,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 1: *//* multisig_approve_as_multi_V1 - other_signatories *//*;
-            return _toStringVecAccountId_V1(
-                &m->basic.multisig_approve_as_multi_V1.other_signatories,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 2: *//* multisig_approve_as_multi_V1 - maybe_timepoint *//*;
-            return _toStringOptionTimepoint_V1(
-                &m->basic.multisig_approve_as_multi_V1.maybe_timepoint,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 3: *//* multisig_approve_as_multi_V1 - call_hash *//*;
-            return _toStringu8_array_32_V1(
-                &m->basic.multisig_approve_as_multi_V1.call_hash,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 4: *//* multisig_approve_as_multi_V1 - max_weight *//*;
-            return _toStringWeight_V1(
-                &m->basic.multisig_approve_as_multi_V1.max_weight,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        default:
-            return parser_no_data;
-        }
-    case 7683: *//* module 30 call 3 *//*
-        switch (itemIdx) {
-        case 0: *//* multisig_cancel_as_multi_V1 - threshold *//*;
-            return _toStringu16(
-                &m->basic.multisig_cancel_as_multi_V1.threshold,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 1: *//* multisig_cancel_as_multi_V1 - other_signatories *//*;
-            return _toStringVecAccountId_V1(
-                &m->basic.multisig_cancel_as_multi_V1.other_signatories,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 2: *//* multisig_cancel_as_multi_V1 - timepoint *//*;
-            return _toStringTimepoint_V1(
-                &m->basic.multisig_cancel_as_multi_V1.timepoint,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        case 3: *//* multisig_cancel_as_multi_V1 - call_hash *//*;
-            return _toStringu8_array_32_V1(
-                &m->basic.multisig_cancel_as_multi_V1.call_hash,
-                outValue, outValueLen,
-                pageIdx, pageCount);
-        default:
-            return parser_no_data;
-        }*/
     case 8704: /* module 34 call 0 */
         switch (itemIdx) {
         case 0: /* bounties_propose_bounty_V1 - value */;
@@ -6520,11 +5829,6 @@ bool _getMethod_IsNestingSupported_V1(uint8_t moduleIdx, uint8_t callIdx)
     case 7424: // Babe:Report equivocation
     case 7425: // Babe:Report equivocation unsigned
     case 256: // Timestamp:Set
-    /*case 1024: // Indices:Claim
-    case 1025: // Indices:Transfer
-    case 1026: // Indices:Free
-    case 1027: // Indices:Force transfer
-    case 1028: // Indices:Freeze*/
     case 512: // Balances:Transfer
     case 513: // Balances:Set balance
     case 514: // Balances:Force transfer
@@ -6614,15 +5918,6 @@ bool _getMethod_IsNestingSupported_V1(uint8_t moduleIdx, uint8_t callIdx)
     case 8448: // Treasury:Propose spend
     case 8449: // Treasury:Reject proposal
     case 8450: // Treasury:Approve proposal
-    /*case 6144: // Claims:Claim
-    case 6145: // Claims:Mint claim
-    case 6146: // Claims:Claim attest
-    case 6147: // Claims:Attest
-    case 6148: // Claims:Move claim
-    case 6400: // Vesting:Vest
-    case 6401: // Vesting:Vest other
-    case 6402: // Vesting:Vested transfer
-    case 6403: // Vesting:Force vested transfer*/
     case 2048: // Utility:Batch
     case 2049: // Utility:As derivative
     case 2050: // Utility:Batch all
@@ -6641,20 +5936,6 @@ bool _getMethod_IsNestingSupported_V1(uint8_t moduleIdx, uint8_t callIdx)
     case 9740: // Identity:Rename sub
     case 9741: // Identity:Remove sub
     case 9742: // Identity:Quit sub
-    /*case 7424: // Proxy:Proxy
-    case 7425: // Proxy:Add proxy
-    case 7426: // Proxy:Remove proxy
-    case 7427: // Proxy:Remove proxies
-    case 7428: // Proxy:Anonymous
-    case 7429: // Proxy:Kill anonymous
-    case 7430: // Proxy:Announce
-    case 7431: // Proxy:Remove announcement
-    case 7432: // Proxy:Reject announcement
-    case 7433: // Proxy:Proxy announced
-    case 7680: // Multisig:As multi threshold 1
-    case 7681: // Multisig:As multi
-    case 7682: // Multisig:Approve as multi
-    case 7683: // Multisig:Cancel as multi*/
     case 8704: // Bounties:Propose bounty
     case 8705: // Bounties:Approve bounty
     case 8706: // Bounties:Propose curator
