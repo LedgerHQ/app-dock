@@ -1,20 +1,24 @@
-# Ledger Polkadot app
+# Ledger Dock app
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![CircleCI](https://circleci.com/gh/Zondax/ledger-polkadot.svg?style=shield)](https://circleci.com/gh/Zondax/ledger-polkadot)
+
 
 -------------------
-
+## Credits
+This app is a fork of [ledger-polkadot] developed by [zondax.ch](zondax.ch). It has been modified to work with [Dock](https://www.dock.io/).  
 ![zondax](docs/zondax.jpg)
 
-_Please visit our website at [zondax.ch](zondax.ch)_
+_Visit Zondax website at [zondax.ch](zondax.ch)_
 
-------------------
+![dock](docs/dock.png)
+
+_Visit Dock's website at [dock.io](https://www.dock.io/)_
+
+## Overview
+
 This project contains the Dock app (https://dock.io/) for Ledger Nano S and X.
 
 - Ledger Nano S/X BOLOS app
 - Specs / Documentation
-- C++ unit tests
-- Zemu tests
 
 For more information: [How to build](docs/build.md)
 
@@ -237,9 +241,9 @@ Empty
 
 | Name        | Light | XL | Nesting | Arguments |
 | :---------- |:------------:|:--------:|:--------:|:--------|
-|batch | :heavy_check_mark:  | :heavy_check_mark: |   | `Vec<Call>` calls <br/> |
+|batch |   |  |   | `Vec<Call>` calls <br/> |
 |as_derivative |    |   |   | `u16` index <br/>`Call` call <br/> |
-|batch_all | :heavy_check_mark:  | :heavy_check_mark: |   | `Vec<Call>` calls <br/> |
+|batch_all |   |  |   | `Vec<Call>` calls <br/> |
 
 ## Identity
 
