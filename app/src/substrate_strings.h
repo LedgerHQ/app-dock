@@ -43,6 +43,7 @@ static const char* STR_MO_BOUNTIES = "Bounties";
 static const char* STR_MO_TIPS = "Tips";
 static const char* STR_MO_ELECTIONPROVIDERMULTIPHASE = "Electionprovidermultiphase";
 static const char* STR_MO_PHRAGMENELECTION = "Phragmenelection";
+static const char* STR_MO_AUTHORSHIP = "Authorship";
 static const char* STR_MO_POAMODULE = "Poamodule";
 static const char* STR_MO_MIGRATIONMODULE = "Migration";
 static const char* STR_MO_MASTERMODULE = "Master";

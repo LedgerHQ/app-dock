@@ -280,44 +280,6 @@ __Z_INLINE parser_error_t _readMethod_timestamp_set_V1(
     return parser_ok;
 }
 
-__Z_INLINE parser_error_t _readMethod_indices_claim_V1(
-    parser_context_t* c, pd_indices_claim_V1_t* m)
-{
-    CHECK_ERROR(_readAccountIndex_V1(c, &m->index))
-    return parser_ok;
-}
-
-__Z_INLINE parser_error_t _readMethod_indices_transfer_V1(
-    parser_context_t* c, pd_indices_transfer_V1_t* m)
-{
-    CHECK_ERROR(_readAccountId_V1(c, &m->new_))
-    CHECK_ERROR(_readAccountIndex_V1(c, &m->index))
-    return parser_ok;
-}
-
-__Z_INLINE parser_error_t _readMethod_indices_free_V1(
-    parser_context_t* c, pd_indices_free_V1_t* m)
-{
-    CHECK_ERROR(_readAccountIndex_V1(c, &m->index))
-    return parser_ok;
-}
-
-__Z_INLINE parser_error_t _readMethod_indices_force_transfer_V1(
-    parser_context_t* c, pd_indices_force_transfer_V1_t* m)
-{
-    CHECK_ERROR(_readAccountId_V1(c, &m->new_))
-    CHECK_ERROR(_readAccountIndex_V1(c, &m->index))
-    CHECK_ERROR(_readbool(c, &m->freeze))
-    return parser_ok;
-}
-
-__Z_INLINE parser_error_t _readMethod_indices_freeze_V1(
-    parser_context_t* c, pd_indices_freeze_V1_t* m)
-{
-    CHECK_ERROR(_readAccountIndex_V1(c, &m->index))
-    return parser_ok;
-}
-
 __Z_INLINE parser_error_t _readMethod_balances_set_balance_V1(
     parser_context_t* c, pd_balances_set_balance_V1_t* m)
 {
@@ -500,8 +462,12 @@ __Z_INLINE parser_error_t _readMethod_democracy_propose_V1(
 __Z_INLINE parser_error_t _readMethod_democracy_second_V1(
     parser_context_t* c, pd_democracy_second_V1_t* m)
 {
+    // TODO: Remove printfs
+    PRINTF("Inside _readMethod_democracy_second_V1 \n\n");
     CHECK_ERROR(_readCompactPropIndex_V1(c, &m->proposal))
+    PRINTF("After _readCompactPropIndex_V1 \n\n");
     CHECK_ERROR(_readCompactu32(c, &m->seconds_upper_bound))
+    PRINTF("After _readCompactu32 \n\n");
     return parser_ok;
 }
 
@@ -892,79 +858,6 @@ __Z_INLINE parser_error_t _readMethod_treasury_approve_proposal_V1(
     return parser_ok;
 }
 
-__Z_INLINE parser_error_t _readMethod_claims_claim_V1(
-    parser_context_t* c, pd_claims_claim_V1_t* m)
-{
-    CHECK_ERROR(_readAccountId_V1(c, &m->dest))
-    CHECK_ERROR(_readEcdsaSignature_V1(c, &m->ethereum_signature))
-    return parser_ok;
-}
-
-__Z_INLINE parser_error_t _readMethod_claims_mint_claim_V1(
-    parser_context_t* c, pd_claims_mint_claim_V1_t* m)
-{
-    CHECK_ERROR(_readEthereumAddress_V1(c, &m->who))
-    CHECK_ERROR(_readBalanceOf(c, &m->value))
-    CHECK_ERROR(_readOptionTupleBalanceOfBalanceOfBlockNumber_V1(c, &m->vesting_schedule))
-    CHECK_ERROR(_readOptionStatementKind_V1(c, &m->statement))
-    return parser_ok;
-}
-
-__Z_INLINE parser_error_t _readMethod_claims_claim_attest_V1(
-    parser_context_t* c, pd_claims_claim_attest_V1_t* m)
-{
-    CHECK_ERROR(_readAccountId_V1(c, &m->dest))
-    CHECK_ERROR(_readEcdsaSignature_V1(c, &m->ethereum_signature))
-    CHECK_ERROR(_readBytes(c, &m->statement))
-    return parser_ok;
-}
-
-__Z_INLINE parser_error_t _readMethod_claims_attest_V1(
-    parser_context_t* c, pd_claims_attest_V1_t* m)
-{
-    CHECK_ERROR(_readBytes(c, &m->statement))
-    return parser_ok;
-}
-
-__Z_INLINE parser_error_t _readMethod_claims_move_claim_V1(
-    parser_context_t* c, pd_claims_move_claim_V1_t* m)
-{
-    CHECK_ERROR(_readEthereumAddress_V1(c, &m->old))
-    CHECK_ERROR(_readEthereumAddress_V1(c, &m->new_))
-    CHECK_ERROR(_readOptionAccountId_V1(c, &m->maybe_preclaim))
-    return parser_ok;
-}
-
-__Z_INLINE parser_error_t _readMethod_vesting_vest_V1(
-    parser_context_t* c, pd_vesting_vest_V1_t* m)
-{
-    return parser_ok;
-}
-
-__Z_INLINE parser_error_t _readMethod_vesting_vest_other_V1(
-    parser_context_t* c, pd_vesting_vest_other_V1_t* m)
-{
-    CHECK_ERROR(_readLookupSource_V1(c, &m->target))
-    return parser_ok;
-}
-
-__Z_INLINE parser_error_t _readMethod_vesting_vested_transfer_V1(
-    parser_context_t* c, pd_vesting_vested_transfer_V1_t* m)
-{
-    CHECK_ERROR(_readLookupSource_V1(c, &m->target))
-    CHECK_ERROR(_readVestingInfo_V1(c, &m->schedule))
-    return parser_ok;
-}
-
-__Z_INLINE parser_error_t _readMethod_vesting_force_vested_transfer_V1(
-    parser_context_t* c, pd_vesting_force_vested_transfer_V1_t* m)
-{
-    CHECK_ERROR(_readLookupSource_V1(c, &m->source))
-    CHECK_ERROR(_readLookupSource_V1(c, &m->target))
-    CHECK_ERROR(_readVestingInfo_V1(c, &m->schedule))
-    return parser_ok;
-}
-
 __Z_INLINE parser_error_t _readMethod_utility_as_derivative_V1(
     parser_context_t* c, pd_utility_as_derivative_V1_t* m)
 {
@@ -1081,134 +974,6 @@ __Z_INLINE parser_error_t _readMethod_identity_remove_sub_V1(
 __Z_INLINE parser_error_t _readMethod_identity_quit_sub_V1(
     parser_context_t* c, pd_identity_quit_sub_V1_t* m)
 {
-    return parser_ok;
-}
-
-__Z_INLINE parser_error_t _readMethod_proxy_proxy_V1(
-    parser_context_t* c, pd_proxy_proxy_V1_t* m)
-{
-    CHECK_ERROR(_readAccountId_V1(c, &m->real))
-    CHECK_ERROR(_readOptionProxyType_V1(c, &m->force_proxy_type))
-    CHECK_ERROR(_readCall(c, &m->call))
-    return parser_ok;
-}
-
-__Z_INLINE parser_error_t _readMethod_proxy_add_proxy_V1(
-    parser_context_t* c, pd_proxy_add_proxy_V1_t* m)
-{
-    CHECK_ERROR(_readAccountId_V1(c, &m->delegate))
-    CHECK_ERROR(_readProxyType_V1(c, &m->proxy_type))
-    CHECK_ERROR(_readBlockNumber(c, &m->delay))
-    return parser_ok;
-}
-
-__Z_INLINE parser_error_t _readMethod_proxy_remove_proxy_V1(
-    parser_context_t* c, pd_proxy_remove_proxy_V1_t* m)
-{
-    CHECK_ERROR(_readAccountId_V1(c, &m->delegate))
-    CHECK_ERROR(_readProxyType_V1(c, &m->proxy_type))
-    CHECK_ERROR(_readBlockNumber(c, &m->delay))
-    return parser_ok;
-}
-
-__Z_INLINE parser_error_t _readMethod_proxy_remove_proxies_V1(
-    parser_context_t* c, pd_proxy_remove_proxies_V1_t* m)
-{
-    return parser_ok;
-}
-
-__Z_INLINE parser_error_t _readMethod_proxy_anonymous_V1(
-    parser_context_t* c, pd_proxy_anonymous_V1_t* m)
-{
-    CHECK_ERROR(_readProxyType_V1(c, &m->proxy_type))
-    CHECK_ERROR(_readBlockNumber(c, &m->delay))
-    CHECK_ERROR(_readu16(c, &m->index))
-    return parser_ok;
-}
-
-__Z_INLINE parser_error_t _readMethod_proxy_kill_anonymous_V1(
-    parser_context_t* c, pd_proxy_kill_anonymous_V1_t* m)
-{
-    CHECK_ERROR(_readAccountId_V1(c, &m->spawner))
-    CHECK_ERROR(_readProxyType_V1(c, &m->proxy_type))
-    CHECK_ERROR(_readu16(c, &m->index))
-    CHECK_ERROR(_readCompactBlockNumber(c, &m->height))
-    CHECK_ERROR(_readCompactu32(c, &m->ext_index))
-    return parser_ok;
-}
-
-__Z_INLINE parser_error_t _readMethod_proxy_announce_V1(
-    parser_context_t* c, pd_proxy_announce_V1_t* m)
-{
-    CHECK_ERROR(_readAccountId_V1(c, &m->real))
-    CHECK_ERROR(_readCallHashOf_V1(c, &m->call_hash))
-    return parser_ok;
-}
-
-__Z_INLINE parser_error_t _readMethod_proxy_remove_announcement_V1(
-    parser_context_t* c, pd_proxy_remove_announcement_V1_t* m)
-{
-    CHECK_ERROR(_readAccountId_V1(c, &m->real))
-    CHECK_ERROR(_readCallHashOf_V1(c, &m->call_hash))
-    return parser_ok;
-}
-
-__Z_INLINE parser_error_t _readMethod_proxy_reject_announcement_V1(
-    parser_context_t* c, pd_proxy_reject_announcement_V1_t* m)
-{
-    CHECK_ERROR(_readAccountId_V1(c, &m->delegate))
-    CHECK_ERROR(_readCallHashOf_V1(c, &m->call_hash))
-    return parser_ok;
-}
-
-__Z_INLINE parser_error_t _readMethod_proxy_proxy_announced_V1(
-    parser_context_t* c, pd_proxy_proxy_announced_V1_t* m)
-{
-    CHECK_ERROR(_readAccountId_V1(c, &m->delegate))
-    CHECK_ERROR(_readAccountId_V1(c, &m->real))
-    CHECK_ERROR(_readOptionProxyType_V1(c, &m->force_proxy_type))
-    CHECK_ERROR(_readCall(c, &m->call))
-    return parser_ok;
-}
-
-__Z_INLINE parser_error_t _readMethod_multisig_as_multi_threshold_1_V1(
-    parser_context_t* c, pd_multisig_as_multi_threshold_1_V1_t* m)
-{
-    CHECK_ERROR(_readVecAccountId_V1(c, &m->other_signatories))
-    CHECK_ERROR(_readCall(c, &m->call))
-    return parser_ok;
-}
-
-__Z_INLINE parser_error_t _readMethod_multisig_as_multi_V1(
-    parser_context_t* c, pd_multisig_as_multi_V1_t* m)
-{
-    CHECK_ERROR(_readu16(c, &m->threshold))
-    CHECK_ERROR(_readVecAccountId_V1(c, &m->other_signatories))
-    CHECK_ERROR(_readOptionTimepoint_V1(c, &m->maybe_timepoint))
-    CHECK_ERROR(_readOpaqueCall_V1(c, &m->call))
-    CHECK_ERROR(_readbool(c, &m->store_call))
-    CHECK_ERROR(_readWeight_V1(c, &m->max_weight))
-    return parser_ok;
-}
-
-__Z_INLINE parser_error_t _readMethod_multisig_approve_as_multi_V1(
-    parser_context_t* c, pd_multisig_approve_as_multi_V1_t* m)
-{
-    CHECK_ERROR(_readu16(c, &m->threshold))
-    CHECK_ERROR(_readVecAccountId_V1(c, &m->other_signatories))
-    CHECK_ERROR(_readOptionTimepoint_V1(c, &m->maybe_timepoint))
-    CHECK_ERROR(_readu8_array_32_V1(c, &m->call_hash))
-    CHECK_ERROR(_readWeight_V1(c, &m->max_weight))
-    return parser_ok;
-}
-
-__Z_INLINE parser_error_t _readMethod_multisig_cancel_as_multi_V1(
-    parser_context_t* c, pd_multisig_cancel_as_multi_V1_t* m)
-{
-    CHECK_ERROR(_readu16(c, &m->threshold))
-    CHECK_ERROR(_readVecAccountId_V1(c, &m->other_signatories))
-    CHECK_ERROR(_readTimepoint_V1(c, &m->timepoint))
-    CHECK_ERROR(_readu8_array_32_V1(c, &m->call_hash))
     return parser_ok;
 }
 
@@ -1774,7 +1539,7 @@ parser_error_t _readMethod_V1(
         break;
 #endif
     default:
-        return parser_not_supported;
+        return parser_unexpected_callIndex;
     }
 
     return parser_ok;
@@ -1805,8 +1570,6 @@ const char* _getMethod_ModuleName_V1(uint8_t moduleIdx)
         return STR_MO_BABE;
     case 1:
         return STR_MO_TIMESTAMP;
-    /*case 4:
-        return STR_MO_INDICES;*/
     case 6:
         return STR_MO_AUTHORSHIP;
     case 32:
@@ -1829,16 +1592,8 @@ const char* _getMethod_ModuleName_V1(uint8_t moduleIdx)
         return STR_MO_TECHNICALMEMBERSHIP;
     case 33:
         return STR_MO_TREASURY;
-    /*case 24:
-        return STR_MO_CLAIMS;
-    case 25:
-        return STR_MO_VESTING;*/
     case 38:
         return STR_MO_IDENTITY;
-    /*case 29:
-        return STR_MO_PROXY;
-    case 30:
-        return STR_MO_MULTISIG;*/
     case 34:
         return STR_MO_BOUNTIES;
     case 37:
@@ -1951,7 +1706,7 @@ const char* _getMethod_Name_V1(uint8_t moduleIdx, uint8_t callIdx)
         return STR_ME_FORCE_UNSTAKE;
     case 7696: /* module 30 call 16 */
         return STR_ME_FORCE_NEW_ERA_ALWAYS;
-    case 7693: /* module 30 call 13 */
+    case 7697: /* module 30 call 17 */
         return STR_ME_CANCEL_DEFERRED_SLASH;
     case 7700: /* module 30 call 20 */
         return STR_ME_SET_HISTORY_DEPTH;
@@ -2264,7 +2019,7 @@ uint8_t _getMethod_NumItems_V1(uint8_t moduleIdx, uint8_t callIdx)
         return 2;
     case 1281: /* module 5 call 1 */
         return 2;
-    case 1280: /* module 5 call 2 */
+    case 1282: /* module 5 call 2 */
         return 2;
     case 7168: /* module 28 call 0 */
         return 2;
@@ -4341,7 +4096,7 @@ parser_error_t _getMethod_ItemValue_V1(
         default:
             return parser_no_data;
         }
-    ccase 7425: /* module 29 call 1 */
+    case 7425: /* module 29 call 1 */
         switch (itemIdx) {
         case 0: /* babe_report_equivocation_unsigned_V1 - equivocation_proof */;
             return _toStringBabeEquivocationProof_V1(

@@ -190,15 +190,25 @@ parser_error_t _readIdentityFields_V1(parser_context_t* c, pd_IdentityFields_V1_
 
 parser_error_t _readIdentityInfo_V1(parser_context_t* c, pd_IdentityInfo_V1_t* v)
 {
+    PRINTF("Inside _readIdentityInfo_V1 \n\n");
     CHECK_ERROR(_readVecTupleDataData(c, &v->additional));
+    PRINTF("After _readVecTupleDataData \n\n");
     CHECK_ERROR(_readData(c, &v->display));
+    PRINTF("After _readData ->display \n\n");
     CHECK_ERROR(_readData(c, &v->legal));
+    PRINTF("After _readData ->legal \n\n");
     CHECK_ERROR(_readData(c, &v->web));
+    PRINTF("After _readData ->web \n\n");
     CHECK_ERROR(_readData(c, &v->riot));
+    PRINTF("After _readData ->riot \n\n");
     CHECK_ERROR(_readData(c, &v->email));
+    PRINTF("After _readData ->email \n\n");
     CHECK_ERROR(_readOptionu8_array_20(c, &v->pgp_fingerprint));
+    PRINTF("After _readData ->pgp_fingerprint \n\n");
     CHECK_ERROR(_readData(c, &v->image));
+    PRINTF("After _readData ->image \n\n");
     CHECK_ERROR(_readData(c, &v->twitter));
+    PRINTF("After _readData ->twitter \n\n");
     return parser_ok;
 }
 
@@ -1157,7 +1167,7 @@ parser_error_t _toStringLookupSource_V1(
         GEN_DEF_TOSTRING_ARRAY(20)
     }
     default:
-        return parser_not_supported;
+        return parser_unexpected_address_type;
     }
 
     return parser_ok;
