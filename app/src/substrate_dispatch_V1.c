@@ -200,6 +200,13 @@ __Z_INLINE parser_error_t _readMethod_system_kill_prefix_V1(
     return parser_ok;
 }
 
+__Z_INLINE parser_error_t _readMethod_system_remark_with_event_V1(
+        parser_context_t* c, pd_system_remark_with_event_V1_t* m)
+{
+    CHECK_ERROR(_readBytes(c, &m->remark))
+    return parser_ok;
+}
+
 __Z_INLINE parser_error_t _readMethod_scheduler_schedule_V1(
     parser_context_t* c, pd_scheduler_schedule_V1_t* m)
 {
@@ -1189,6 +1196,9 @@ parser_error_t _readMethod_V1(
     case 8: /* module 0 call 8 */
         CHECK_ERROR(_readMethod_system_kill_prefix_V1(c, &method->basic.system_kill_prefix_V1))
         break;
+    case 9: /* module 0 call 9 */
+        CHECK_ERROR(_readMethod_system_remark_with_event_V1(c, &method->basic.system_remark_with_event_V1))
+        break;
     case 5376: /* module 21 call 0 */
         CHECK_ERROR(_readMethod_scheduler_schedule_V1(c, &method->basic.scheduler_schedule_V1))
         break;
@@ -1664,6 +1674,8 @@ const char* _getMethod_Name_V1(uint8_t moduleIdx, uint8_t callIdx)
         return STR_ME_KILL_STORAGE;
     case 8: /* module 0 call 8 */
         return STR_ME_KILL_PREFIX;
+    case 9: /* module 0 call 9 */
+        return STR_ME_REMARK_WITH_EVENT;
     case 5376: /* module 21 call 0 */
         return STR_ME_SCHEDULE;
     case 5377: /* module 21 call 1 */
@@ -3945,6 +3957,16 @@ parser_error_t _getMethod_ItemValue_V1(
                 pageIdx, pageCount);
         default:
             return parser_no_data;
+        }
+    case 9: /* module 0 call 9 */
+        switch (itemIdx) {
+            case 0: /* system_remark_with_event_V1 - remark */;
+            return _toStringBytes(
+                    &m->basic.system_remark_with_event_V1.remark,
+                    outValue, outValueLen,
+                    pageIdx, pageCount);
+            default:
+                return parser_no_data;
         }
     case 5376: /* module 21 call 0 */
         switch (itemIdx) {

@@ -187,6 +187,11 @@ extern "C" {
         pd_u32_t _subkeys;
     } pd_system_kill_prefix_V1_t;
 
+#define PD_CALL_SYSTEM_REMARK_WITH_EVENT_V1 9
+    typedef struct {
+        pd_Bytes_t remark;
+    } pd_system_remark_with_event_V1_t;
+
 #define PD_CALL_SCHEDULER_SCHEDULE_V1 0
     typedef struct {
         pd_BlockNumber_t when;
@@ -879,6 +884,7 @@ extern "C" {
         pd_system_set_storage_V1_t system_set_storage_V1;
         pd_system_kill_storage_V1_t system_kill_storage_V1;
         pd_system_kill_prefix_V1_t system_kill_prefix_V1;
+        pd_system_remark_with_event_V1_t system_remark_with_event_V1;
         pd_scheduler_schedule_V1_t scheduler_schedule_V1;
         pd_scheduler_cancel_V1_t scheduler_cancel_V1;
         pd_scheduler_schedule_named_V1_t scheduler_schedule_named_V1;
