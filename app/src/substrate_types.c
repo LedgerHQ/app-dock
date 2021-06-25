@@ -114,7 +114,7 @@ parser_error_t _readCompactBlockNumber(parser_context_t* c, pd_CompactBlockNumbe
 
 parser_error_t _readBalance(parser_context_t* c, pd_Balance_t* v) {
     // Dock's balance type is u64, i.e. 8 bytes
-    GEN_DEF_READARRAY(8)
+    GEN_DEF_READARRAY(DockBalanceSize)
 }
 
 parser_error_t _readData(parser_context_t* c, pd_Data_t* v)
@@ -412,7 +412,8 @@ parser_error_t _toStringBalance(
     uint8_t bcdOut[100];
     const uint16_t bcdOutLen = sizeof(bcdOut);
 
-    bignumLittleEndian_to_bcd(bcdOut, bcdOutLen, v->_ptr, 16);
+    // Dock's balance type is u64, i.e. 8 bytes
+    bignumLittleEndian_to_bcd(bcdOut, bcdOutLen, v->_ptr, DockBalanceSize);
     if (!bignumLittleEndian_bcdprint(bufferUI, sizeof(bufferUI), bcdOut, bcdOutLen)) {
         return parser_unexpected_buffer_end;
     }
