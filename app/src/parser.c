@@ -89,9 +89,10 @@ parser_error_t parser_validate(const parser_context_t *ctx) {
 }
 
 parser_error_t parser_getNumItems(const parser_context_t *ctx, uint8_t *num_items) {
-    uint8_t methodArgCount = _getMethod_NumItems(ctx->tx_obj->transactionVersion,
-                                                 ctx->tx_obj->callIndex.moduleIdx,
-                                                 ctx->tx_obj->callIndex.idx);
+    uint8_t methodArgCount = 0;
+    CHECK_PARSER_ERR(_getMethod_NumItems(ctx->tx_obj->transactionVersion,
+                                         ctx->tx_obj->callIndex.moduleIdx,
+                                         ctx->tx_obj->callIndex.idx, &methodArgCount));
 
     uint8_t total = FIELD_FIXED_TOTAL_COUNT;
     if(!parser_show_tip(ctx)){
@@ -143,9 +144,10 @@ parser_error_t parser_getItem(const parser_context_t *ctx,
     }
 
     // VARIABLE ARGUMENTS
-    uint8_t methodArgCount = _getMethod_NumItems(ctx->tx_obj->transactionVersion,
-                                                 ctx->tx_obj->callIndex.moduleIdx,
-                                                 ctx->tx_obj->callIndex.idx);
+    uint8_t methodArgCount = 0;
+    CHECK_PARSER_ERR(_getMethod_NumItems(ctx->tx_obj->transactionVersion,
+                                         ctx->tx_obj->callIndex.moduleIdx,
+                                         ctx->tx_obj->callIndex.idx, &methodArgCount));
     uint8_t argIdx = displayIdx - 1;
 
 

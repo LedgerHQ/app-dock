@@ -48,6 +48,7 @@ typedef enum {
     parser_value_too_many_bytes,
     parser_unexpected_module,
     parser_unexpected_callIndex,
+    parser_unexpected_call,
     parser_unexpected_unparsed_bytes,
     parser_print_not_supported,
     parser_tx_nesting_not_supported,

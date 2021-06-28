@@ -14,6 +14,7 @@
 *  limitations under the License.
 ********************************************************************************/
 
+#include "substrate_dispatch.h"
 #include "substrate_dispatch_V1.h"
 #include "substrate_strings.h"
 #include "zxmacros.h"
@@ -1912,301 +1913,301 @@ const char* _getMethod_Name_V1(uint8_t moduleIdx, uint8_t callIdx)
     return NULL;
 }
 
-// Return number of arguments of extrinsic (exclude `origin`)
-uint8_t _getMethod_NumItems_V1(uint8_t moduleIdx, uint8_t callIdx)
+// For number of arguments of extrinsic (exclude `origin`).
+parser_error_t _getMethod_NumItems_V1(uint8_t moduleIdx, uint8_t callIdx, uint8_t* numItems)
 {
     uint16_t callPrivIdx = ((uint16_t)moduleIdx << 8u) + callIdx;
 
     switch (callPrivIdx) {
     case 512: /* module 2 call 0 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 515: /* module 2 call 3 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 7680: /* module 30 call 0 */
-        return 3;
+        SET_AND_BREAK(numItems, 3);
     case 7681: /* module 30 call 1 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 7682: /* module 30 call 2 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 7683: /* module 30 call 3 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 7684: /* module 30 call 4 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 7685: /* module 30 call 5 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 7686: /* module 30 call 6 */
-        return 0;
+        SET_AND_BREAK(numItems, 0);
     case 7687: /* module 30 call 7 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 7698: /* module 30 call 18 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 7699: /* module 30 call 19 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 768: /* module 3 call 0 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 769: /* module 3 call 1 */
-        return 0;
+        SET_AND_BREAK(numItems, 0);
     case 2048: /* module 8 call 0 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 2050: /* module 8 call 2 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
 #ifdef SUBSTRATE_PARSER_FULL
     case 0: /* module 0 call 0 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 1: /* module 0 call 1 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 2: /* module 0 call 2 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 3: /* module 0 call 3 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 4: /* module 0 call 4 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 5: /* module 0 call 5 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 6: /* module 0 call 6 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 7: /* module 0 call 7 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 8: /* module 0 call 8 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 5376: /* module 21 call 0 */
-        return 4;
+        SET_AND_BREAK(numItems, 4);
     case 5377: /* module 21 call 1 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 5378: /* module 21 call 2 */
-        return 5;
+        SET_AND_BREAK(numItems, 5);
     case 5379: /* module 21 call 3 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 5380: /* module 21 call 4 */
-        return 4;
+        SET_AND_BREAK(numItems, 4);
     case 5381: /* module 21 call 5 */
-        return 5;
+        SET_AND_BREAK(numItems, 5);
     case 7424: /* module 29 call 0 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 7425: /* module 29 call 1 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 256: /* module 1 call 0 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 513: /* module 2 call 1 */
-        return 3;
+        SET_AND_BREAK(numItems, 3);
     case 514: /* module 2 call 2 */
-        return 3;
+        SET_AND_BREAK(numItems, 3);
     case 1536: /* module 6 call 0 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 7688: /* module 30 call 8 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 7689: /* module 30 call 9 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 7690: /* module 30 call 10 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 7691: /* module 30 call 11 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 7692: /* module 30 call 12 */
-        return 0;
+        SET_AND_BREAK(numItems, 0);
     case 7693: /* module 30 call 13 */
-        return 0;
+        SET_AND_BREAK(numItems, 0);
     case 7694: /* module 30 call 14 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 7695: /* module 30 call 15 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 7696: /* module 30 call 16 */
-        return 0;
+        SET_AND_BREAK(numItems, 0);
     case 7697: /* module 30 call 17 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 7700: /* module 30 call 20 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 7701: /* module 30 call 21 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 7702: /* module 30 call 22 */
-        return 5;
+        SET_AND_BREAK(numItems, 5);
     case 7703: /* module 30 call 23 */
-        return 5;
+        SET_AND_BREAK(numItems, 5);
     case 7704: /* module 30 call 24 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 1280: /* module 5 call 0 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 1281: /* module 5 call 1 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 1282: /* module 5 call 2 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 7168: /* module 28 call 0 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 4352: /* module 17 call 0 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 4353: /* module 17 call 1 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 4354: /* module 17 call 2 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 4355: /* module 17 call 3 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 4356: /* module 17 call 4 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 4357: /* module 17 call 5 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 4358: /* module 17 call 6 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 4359: /* module 17 call 7 */
-        return 3;
+        SET_AND_BREAK(numItems, 3);
     case 4360: /* module 17 call 8 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 4361: /* module 17 call 9 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 4362: /* module 17 call 10 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 4363: /* module 17 call 11 */
-        return 3;
+        SET_AND_BREAK(numItems, 3);
     case 4364: /* module 17 call 12 */
-        return 0;
+        SET_AND_BREAK(numItems, 0);
     case 4365: /* module 17 call 13 */
-        return 0;
+        SET_AND_BREAK(numItems, 0);
     case 4366: /* module 17 call 14 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 4367: /* module 17 call 15 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 4368: /* module 17 call 16 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 4369: /* module 17 call 17 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 4370: /* module 17 call 18 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 4371: /* module 17 call 19 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 4372: /* module 17 call 20 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 4373: /* module 17 call 21 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 4374: /* module 17 call 22 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 4375: /* module 17 call 23 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 4376: /* module 17 call 24 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 4608: /* module 18 call 0 */
-        return 3;
+        SET_AND_BREAK(numItems, 3);
     case 4609: /* module 18 call 1 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 4610: /* module 18 call 2 */
-        return 3;
+        SET_AND_BREAK(numItems, 3);
     case 4611: /* module 18 call 3 */
-        return 3;
+        SET_AND_BREAK(numItems, 3);
     case 4612: /* module 18 call 4 */
-        return 4;
+        SET_AND_BREAK(numItems, 4);
     case 4613: /* module 18 call 5 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 4864: /* module 19 call 0 */
-        return 3;
+        SET_AND_BREAK(numItems, 3);
     case 4865: /* module 19 call 1 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 4866: /* module 19 call 2 */
-        return 3;
+        SET_AND_BREAK(numItems, 3);
     case 4867: /* module 19 call 3 */
-        return 3;
+        SET_AND_BREAK(numItems, 3);
     case 4868: /* module 19 call 4 */
-        return 4;
+        SET_AND_BREAK(numItems, 4);
     case 4869: /* module 19 call 5 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 9216: /* module 36 call 0 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 9217: /* module 36 call 1 */
-        return 0;
+        SET_AND_BREAK(numItems, 0);
     case 9218: /* module 36 call 2 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 9219: /* module 36 call 3 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 9220: /* module 36 call 4 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 9221: /* module 36 call 5 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 5120: /* module 20 call 0 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 5121: /* module 20 call 1 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 5122: /* module 20 call 2 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 5123: /* module 20 call 3 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 5124: /* module 20 call 4 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 5125: /* module 20 call 5 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 5126: /* module 20 call 6 */
-        return 0;
+        SET_AND_BREAK(numItems, 0);
     case 8448: /* module 33 call 0 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 8449: /* module 33 call 1 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 8450: /* module 33 call 2 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 2049: /* module 8 call 1 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 9728: /* module 38 call 0 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 9729: /* module 38 call 1 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 9730: /* module 38 call 2 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 9731: /* module 38 call 3 */
-        return 0;
+        SET_AND_BREAK(numItems, 0);
     case 9732: /* module 38 call 4 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 9733: /* module 38 call 5 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 9734: /* module 38 call 6 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 9735: /* module 38 call 7 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 9736: /* module 38 call 8 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 9737: /* module 38 call 9 */
-        return 3;
+        SET_AND_BREAK(numItems, 3);
     case 9738: /* module 38 call 10 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 9739: /* module 38 call 11 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 9740: /* module 38 call 12 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 9741: /* module 38 call 13 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 9742: /* module 38 call 14 */
-        return 0;
+        SET_AND_BREAK(numItems, 0);
     case 8704: /* module 34 call 0 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 8705: /* module 34 call 1 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 8706: /* module 34 call 2 */
-        return 3;
+        SET_AND_BREAK(numItems, 3);
     case 8707: /* module 34 call 3 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 8708: /* module 34 call 4 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 8709: /* module 34 call 5 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 8710: /* module 34 call 6 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 8711: /* module 34 call 7 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 8712: /* module 34 call 8 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 9472: /* module 37 call 0 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 9473: /* module 37 call 1 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 9474: /* module 37 call 2 */
-        return 3;
+        SET_AND_BREAK(numItems, 3);
     case 9475: /* module 37 call 3 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
     case 9476: /* module 37 call 4 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 9477: /* module 37 call 5 */
-        return 1;
+        SET_AND_BREAK(numItems, 1);
     case 7936: /* module 31 call 0 */
-        return 2;
+        SET_AND_BREAK(numItems, 2);
 #endif
     default:
-        return 0;
+        return parser_unexpected_callIndex;
     }
 
-    return 0;
+    return parser_ok;
 }
 
 // Return argument names of extrinsics given module index, extrinsic index and argument index

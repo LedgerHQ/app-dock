@@ -33,11 +33,11 @@ parser_error_t _readMethod(
     }
 }
 
-uint8_t _getMethod_NumItems(uint32_t transactionVersion, uint8_t moduleIdx, uint8_t callIdx)
+parser_error_t _getMethod_NumItems(uint32_t transactionVersion, uint8_t moduleIdx, uint8_t callIdx, uint8_t* numItems)
 {
     switch (transactionVersion) {
     case 1:
-        return _getMethod_NumItems_V1(moduleIdx, callIdx);
+        return _getMethod_NumItems_V1(moduleIdx, callIdx, numItems);
     default:
         // TODO: This isn't correct. A mutable argument should be expected and error value should be checked of this function
         return parser_tx_version_not_supported;

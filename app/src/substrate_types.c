@@ -585,7 +585,8 @@ parser_error_t _toStringCall(
     }
 
     // Get num items of this current Call
-    uint8_t callNumItems = _getMethod_NumItems(*v->_txVerPtr, v->callIndex.moduleIdx, v->callIndex.idx);
+    uint8_t callNumItems = 0;
+    CHECK_ERROR(_getMethod_NumItems(*v->_txVerPtr, v->callIndex.moduleIdx, v->callIndex.idx, &callNumItems));
 
     // Count how many pages this call has (including nested ones if they exists)
     for (uint8_t i = 0; i < callNumItems; i++) {
