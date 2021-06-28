@@ -120,8 +120,7 @@ endif
 # Platform
 
 DEFINES       += UNUSED\(x\)=\(void\)x
-#DEFINES       += PRINTF\(...\)=
-DEFINES += HAVE_SPRINTF HAVE_PRINTF PRINTF=screen_printf
+DEFINES       += PRINTF\(...\)=
 
 APPVERSION=$(APPVERSION_M).$(APPVERSION_N).$(APPVERSION_P)
 DEFINES       += APPVERSION=\"$(APPVERSION)\"

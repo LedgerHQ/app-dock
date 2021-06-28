@@ -241,9 +241,9 @@ Empty
 
 | Name        | Light | XL | Nesting | Arguments |
 | :---------- |:------------:|:--------:|:--------:|:--------|
-|batch |   |  |   | `Vec<Call>` calls <br/> |
+|batch | :heavy_check_mark:  | :heavy_check_mark: |   | `Vec<Call>` calls <br/> |
 |as_derivative |    |   |   | `u16` index <br/>`Call` call <br/> |
-|batch_all |   |  |   | `Vec<Call>` calls <br/> |
+|batch_all | :heavy_check_mark:  | :heavy_check_mark: |   | `Vec<Call>` calls <br/> |
 
 ## Identity
 

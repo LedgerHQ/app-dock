@@ -469,12 +469,8 @@ __Z_INLINE parser_error_t _readMethod_democracy_propose_V1(
 __Z_INLINE parser_error_t _readMethod_democracy_second_V1(
     parser_context_t* c, pd_democracy_second_V1_t* m)
 {
-    // TODO: Remove printfs
-    PRINTF("Inside _readMethod_democracy_second_V1 \n\n");
     CHECK_ERROR(_readCompactPropIndex_V1(c, &m->proposal))
-    PRINTF("After _readCompactPropIndex_V1 \n\n");
     CHECK_ERROR(_readCompactu32(c, &m->seconds_upper_bound))
-    PRINTF("After _readCompactu32 \n\n");
     return parser_ok;
 }
 
@@ -1120,40 +1116,40 @@ parser_error_t _readMethod_V1(
     switch (callPrivIdx) {
 
     case 512: /* module 2 call 0 */
-        CHECK_ERROR(_readMethod_balances_transfer_V1(c, &method->basic.balances_transfer_V1))
+    CHECK_ERROR(_readMethod_balances_transfer_V1(c, &method->nested.balances_transfer_V1))
         break;
     case 515: /* module 2 call 3 */
-        CHECK_ERROR(_readMethod_balances_transfer_keep_alive_V1(c, &method->basic.balances_transfer_keep_alive_V1))
+    CHECK_ERROR(_readMethod_balances_transfer_keep_alive_V1(c, &method->nested.balances_transfer_keep_alive_V1))
         break;
     case 7680: /* module 30 call 0 */
-        CHECK_ERROR(_readMethod_staking_bond_V1(c, &method->basic.staking_bond_V1))
+        CHECK_ERROR(_readMethod_staking_bond_V1(c, &method->nested.staking_bond_V1))
         break;
     case 7681: /* module 30 call 1 */
-        CHECK_ERROR(_readMethod_staking_bond_extra_V1(c, &method->basic.staking_bond_extra_V1))
+        CHECK_ERROR(_readMethod_staking_bond_extra_V1(c, &method->nested.staking_bond_extra_V1))
         break;
     case 7682: /* module 30 call 2 */
-        CHECK_ERROR(_readMethod_staking_unbond_V1(c, &method->basic.staking_unbond_V1))
+        CHECK_ERROR(_readMethod_staking_unbond_V1(c, &method->nested.staking_unbond_V1))
         break;
     case 7683: /* module 30 call 3 */
-        CHECK_ERROR(_readMethod_staking_withdraw_unbonded_V1(c, &method->basic.staking_withdraw_unbonded_V1))
+        CHECK_ERROR(_readMethod_staking_withdraw_unbonded_V1(c, &method->nested.staking_withdraw_unbonded_V1))
         break;
     case 7684: /* module 30 call 4 */
-        CHECK_ERROR(_readMethod_staking_validate_V1(c, &method->basic.staking_validate_V1))
+        CHECK_ERROR(_readMethod_staking_validate_V1(c, &method->nested.staking_validate_V1))
         break;
     case 7685: /* module 30 call 5 */
-        CHECK_ERROR(_readMethod_staking_nominate_V1(c, &method->basic.staking_nominate_V1))
+        CHECK_ERROR(_readMethod_staking_nominate_V1(c, &method->nested.staking_nominate_V1))
         break;
     case 7686: /* module 30 call 6 */
-        CHECK_ERROR(_readMethod_staking_chill_V1(c, &method->basic.staking_chill_V1))
+        CHECK_ERROR(_readMethod_staking_chill_V1(c, &method->nested.staking_chill_V1))
         break;
     case 7687: /* module 30 call 7 */
-        CHECK_ERROR(_readMethod_staking_set_payee_V1(c, &method->basic.staking_set_payee_V1))
+        CHECK_ERROR(_readMethod_staking_set_payee_V1(c, &method->nested.staking_set_payee_V1))
         break;
     case 7698: /* module 30 call 18 */
-        CHECK_ERROR(_readMethod_staking_payout_stakers_V1(c, &method->basic.staking_payout_stakers_V1))
+        CHECK_ERROR(_readMethod_staking_payout_stakers_V1(c, &method->nested.staking_payout_stakers_V1))
         break;
     case 7699: /* module 30 call 19 */
-        CHECK_ERROR(_readMethod_staking_rebond_V1(c, &method->basic.staking_rebond_V1))
+        CHECK_ERROR(_readMethod_staking_rebond_V1(c, &method->nested.staking_rebond_V1))
         break;
     case 768: /* module 3 call 0 */
         CHECK_ERROR(_readMethod_session_set_keys_V1(c, &method->basic.session_set_keys_V1))
@@ -1170,31 +1166,31 @@ parser_error_t _readMethod_V1(
 
 #ifdef SUBSTRATE_PARSER_FULL
     case 0: /* module 0 call 0 */
-        CHECK_ERROR(_readMethod_system_fill_block_V1(c, &method->basic.system_fill_block_V1))
+        CHECK_ERROR(_readMethod_system_fill_block_V1(c, &method->nested.system_fill_block_V1))
         break;
     case 1: /* module 0 call 1 */
-        CHECK_ERROR(_readMethod_system_remark_V1(c, &method->basic.system_remark_V1))
+        CHECK_ERROR(_readMethod_system_remark_V1(c, &method->nested.system_remark_V1))
         break;
     case 2: /* module 0 call 2 */
-        CHECK_ERROR(_readMethod_system_set_heap_pages_V1(c, &method->basic.system_set_heap_pages_V1))
+        CHECK_ERROR(_readMethod_system_set_heap_pages_V1(c, &method->nested.system_set_heap_pages_V1))
         break;
     case 3: /* module 0 call 3 */
-        CHECK_ERROR(_readMethod_system_set_code_V1(c, &method->basic.system_set_code_V1))
+        CHECK_ERROR(_readMethod_system_set_code_V1(c, &method->nested.system_set_code_V1))
         break;
     case 4: /* module 0 call 4 */
-        CHECK_ERROR(_readMethod_system_set_code_without_checks_V1(c, &method->basic.system_set_code_without_checks_V1))
+        CHECK_ERROR(_readMethod_system_set_code_without_checks_V1(c, &method->nested.system_set_code_without_checks_V1))
         break;
     case 5: /* module 0 call 5 */
-        CHECK_ERROR(_readMethod_system_set_changes_trie_config_V1(c, &method->basic.system_set_changes_trie_config_V1))
+        CHECK_ERROR(_readMethod_system_set_changes_trie_config_V1(c, &method->nested.system_set_changes_trie_config_V1))
         break;
     case 6: /* module 0 call 6 */
-        CHECK_ERROR(_readMethod_system_set_storage_V1(c, &method->basic.system_set_storage_V1))
+        CHECK_ERROR(_readMethod_system_set_storage_V1(c, &method->nested.system_set_storage_V1))
         break;
     case 7: /* module 0 call 7 */
-        CHECK_ERROR(_readMethod_system_kill_storage_V1(c, &method->basic.system_kill_storage_V1))
+        CHECK_ERROR(_readMethod_system_kill_storage_V1(c, &method->nested.system_kill_storage_V1))
         break;
     case 8: /* module 0 call 8 */
-        CHECK_ERROR(_readMethod_system_kill_prefix_V1(c, &method->basic.system_kill_prefix_V1))
+        CHECK_ERROR(_readMethod_system_kill_prefix_V1(c, &method->nested.system_kill_prefix_V1))
         break;
     case 9: /* module 0 call 9 */
         CHECK_ERROR(_readMethod_system_remark_with_event_V1(c, &method->basic.system_remark_with_event_V1))
@@ -1227,10 +1223,10 @@ parser_error_t _readMethod_V1(
         CHECK_ERROR(_readMethod_timestamp_set_V1(c, &method->basic.timestamp_set_V1))
         break;
     case 513: /* module 2 call 1 */
-        CHECK_ERROR(_readMethod_balances_set_balance_V1(c, &method->basic.balances_set_balance_V1))
+        CHECK_ERROR(_readMethod_balances_set_balance_V1(c, &method->nested.balances_set_balance_V1))
         break;
     case 514: /* module 2 call 2 */
-        CHECK_ERROR(_readMethod_balances_force_transfer_V1(c, &method->basic.balances_force_transfer_V1))
+        CHECK_ERROR(_readMethod_balances_force_transfer_V1(c, &method->nested.balances_force_transfer_V1))
         break;
     case 1536: /* module 6 call 0 */
         CHECK_ERROR(_readMethod_authorship_set_uncles_V1(c, &method->basic.authorship_set_uncles_V1))
@@ -3686,12 +3682,12 @@ parser_error_t _getMethod_ItemValue_V1(
         switch (itemIdx) {
         case 0: /* balances_transfer_V1 - dest */;
             return _toStringLookupSource_V1(
-                &m->basic.balances_transfer_V1.dest,
+                &m->nested.balances_transfer_V1.dest,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         case 1: /* balances_transfer_V1 - value */;
             return _toStringCompactBalance(
-                &m->basic.balances_transfer_V1.value,
+                &m->nested.balances_transfer_V1.value,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         default:
@@ -3701,12 +3697,12 @@ parser_error_t _getMethod_ItemValue_V1(
         switch (itemIdx) {
         case 0: /* balances_transfer_keep_alive_V1 - dest */;
             return _toStringLookupSource_V1(
-                &m->basic.balances_transfer_keep_alive_V1.dest,
+                &m->nested.balances_transfer_keep_alive_V1.dest,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         case 1: /* balances_transfer_keep_alive_V1 - value */;
             return _toStringCompactBalance(
-                &m->basic.balances_transfer_keep_alive_V1.value,
+                &m->nested.balances_transfer_keep_alive_V1.value,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         default:
@@ -3716,17 +3712,17 @@ parser_error_t _getMethod_ItemValue_V1(
         switch (itemIdx) {
         case 0: /* staking_bond_V1 - controller */;
             return _toStringLookupSource_V1(
-                &m->basic.staking_bond_V1.controller,
+                &m->nested.staking_bond_V1.controller,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         case 1: /* staking_bond_V1 - value */;
             return _toStringCompactBalanceOf(
-                &m->basic.staking_bond_V1.value,
+                &m->nested.staking_bond_V1.value,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         case 2: /* staking_bond_V1 - payee */;
             return _toStringRewardDestination_V1(
-                &m->basic.staking_bond_V1.payee,
+                &m->nested.staking_bond_V1.payee,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         default:
@@ -3736,7 +3732,7 @@ parser_error_t _getMethod_ItemValue_V1(
         switch (itemIdx) {
         case 0: /* staking_bond_extra_V1 - max_additional */;
             return _toStringCompactBalanceOf(
-                &m->basic.staking_bond_extra_V1.max_additional,
+                &m->nested.staking_bond_extra_V1.max_additional,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         default:
@@ -3746,7 +3742,7 @@ parser_error_t _getMethod_ItemValue_V1(
         switch (itemIdx) {
         case 0: /* staking_unbond_V1 - value */;
             return _toStringCompactBalanceOf(
-                &m->basic.staking_unbond_V1.value,
+                &m->nested.staking_unbond_V1.value,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         default:
@@ -3756,7 +3752,7 @@ parser_error_t _getMethod_ItemValue_V1(
         switch (itemIdx) {
         case 0: /* staking_withdraw_unbonded_V1 - num_slashing_spans */;
             return _toStringu32(
-                &m->basic.staking_withdraw_unbonded_V1.num_slashing_spans,
+                &m->nested.staking_withdraw_unbonded_V1.num_slashing_spans,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         default:
@@ -3766,7 +3762,7 @@ parser_error_t _getMethod_ItemValue_V1(
         switch (itemIdx) {
         case 0: /* staking_validate_V1 - prefs */;
             return _toStringValidatorPrefs_V1(
-                &m->basic.staking_validate_V1.prefs,
+                &m->nested.staking_validate_V1.prefs,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         default:
@@ -3776,7 +3772,7 @@ parser_error_t _getMethod_ItemValue_V1(
         switch (itemIdx) {
         case 0: /* staking_nominate_V1 - targets */;
             return _toStringVecLookupSource_V1(
-                &m->basic.staking_nominate_V1.targets,
+                &m->nested.staking_nominate_V1.targets,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         default:
@@ -3791,7 +3787,7 @@ parser_error_t _getMethod_ItemValue_V1(
         switch (itemIdx) {
         case 0: /* staking_set_payee_V1 - payee */;
             return _toStringRewardDestination_V1(
-                &m->basic.staking_set_payee_V1.payee,
+                &m->nested.staking_set_payee_V1.payee,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         default:
@@ -3801,12 +3797,12 @@ parser_error_t _getMethod_ItemValue_V1(
         switch (itemIdx) {
         case 0: /* staking_payout_stakers_V1 - validator_stash */;
             return _toStringAccountId_V1(
-                &m->basic.staking_payout_stakers_V1.validator_stash,
+                &m->nested.staking_payout_stakers_V1.validator_stash,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         case 1: /* staking_payout_stakers_V1 - era */;
             return _toStringEraIndex_V1(
-                &m->basic.staking_payout_stakers_V1.era,
+                &m->nested.staking_payout_stakers_V1.era,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         default:
@@ -3816,7 +3812,7 @@ parser_error_t _getMethod_ItemValue_V1(
         switch (itemIdx) {
         case 0: /* staking_rebond_V1 - value */;
             return _toStringCompactBalanceOf(
-                &m->basic.staking_rebond_V1.value,
+                &m->nested.staking_rebond_V1.value,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         default:
@@ -3867,7 +3863,7 @@ parser_error_t _getMethod_ItemValue_V1(
         switch (itemIdx) {
         case 0: /* system_fill_block_V1 - _ratio */;
             return _toStringPerbill_V1(
-                &m->basic.system_fill_block_V1._ratio,
+                &m->nested.system_fill_block_V1._ratio,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         default:
@@ -3877,7 +3873,7 @@ parser_error_t _getMethod_ItemValue_V1(
         switch (itemIdx) {
         case 0: /* system_remark_V1 - _remark */;
             return _toStringBytes(
-                &m->basic.system_remark_V1._remark,
+                &m->nested.system_remark_V1._remark,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         default:
@@ -3887,7 +3883,7 @@ parser_error_t _getMethod_ItemValue_V1(
         switch (itemIdx) {
         case 0: /* system_set_heap_pages_V1 - pages */;
             return _toStringu64(
-                &m->basic.system_set_heap_pages_V1.pages,
+                &m->nested.system_set_heap_pages_V1.pages,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         default:
@@ -3897,7 +3893,7 @@ parser_error_t _getMethod_ItemValue_V1(
         switch (itemIdx) {
         case 0: /* system_set_code_V1 - code */;
             return _toStringBytes(
-                &m->basic.system_set_code_V1.code,
+                &m->nested.system_set_code_V1.code,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         default:
@@ -3907,7 +3903,7 @@ parser_error_t _getMethod_ItemValue_V1(
         switch (itemIdx) {
         case 0: /* system_set_code_without_checks_V1 - code */;
             return _toStringBytes(
-                &m->basic.system_set_code_without_checks_V1.code,
+                &m->nested.system_set_code_without_checks_V1.code,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         default:
@@ -3917,7 +3913,7 @@ parser_error_t _getMethod_ItemValue_V1(
         switch (itemIdx) {
         case 0: /* system_set_changes_trie_config_V1 - changes_trie_config */;
             return _toStringOptionChangesTrieConfiguration_V1(
-                &m->basic.system_set_changes_trie_config_V1.changes_trie_config,
+                &m->nested.system_set_changes_trie_config_V1.changes_trie_config,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         default:
@@ -3927,7 +3923,7 @@ parser_error_t _getMethod_ItemValue_V1(
         switch (itemIdx) {
         case 0: /* system_set_storage_V1 - items */;
             return _toStringVecKeyValue_V1(
-                &m->basic.system_set_storage_V1.items,
+                &m->nested.system_set_storage_V1.items,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         default:
@@ -3937,7 +3933,7 @@ parser_error_t _getMethod_ItemValue_V1(
         switch (itemIdx) {
         case 0: /* system_kill_storage_V1 - keys */;
             return _toStringVecKey_V1(
-                &m->basic.system_kill_storage_V1.keys,
+                &m->nested.system_kill_storage_V1.keys,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         default:
@@ -3947,12 +3943,12 @@ parser_error_t _getMethod_ItemValue_V1(
         switch (itemIdx) {
         case 0: /* system_kill_prefix_V1 - prefix */;
             return _toStringKey_V1(
-                &m->basic.system_kill_prefix_V1.prefix,
+                &m->nested.system_kill_prefix_V1.prefix,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         case 1: /* system_kill_prefix_V1 - _subkeys */;
             return _toStringu32(
-                &m->basic.system_kill_prefix_V1._subkeys,
+                &m->nested.system_kill_prefix_V1._subkeys,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         default:
@@ -4147,17 +4143,17 @@ parser_error_t _getMethod_ItemValue_V1(
         switch (itemIdx) {
         case 0: /* balances_set_balance_V1 - who */;
             return _toStringLookupSource_V1(
-                &m->basic.balances_set_balance_V1.who,
+                &m->nested.balances_set_balance_V1.who,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         case 1: /* balances_set_balance_V1 - new_free */;
             return _toStringCompactBalance(
-                &m->basic.balances_set_balance_V1.new_free,
+                &m->nested.balances_set_balance_V1.new_free,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         case 2: /* balances_set_balance_V1 - new_reserved */;
             return _toStringCompactBalance(
-                &m->basic.balances_set_balance_V1.new_reserved,
+                &m->nested.balances_set_balance_V1.new_reserved,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         default:
@@ -4167,17 +4163,17 @@ parser_error_t _getMethod_ItemValue_V1(
         switch (itemIdx) {
         case 0: /* balances_force_transfer_V1 - source */;
             return _toStringLookupSource_V1(
-                &m->basic.balances_force_transfer_V1.source,
+                &m->nested.balances_force_transfer_V1.source,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         case 1: /* balances_force_transfer_V1 - dest */;
             return _toStringLookupSource_V1(
-                &m->basic.balances_force_transfer_V1.dest,
+                &m->nested.balances_force_transfer_V1.dest,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         case 2: /* balances_force_transfer_V1 - value */;
             return _toStringCompactBalance(
-                &m->basic.balances_force_transfer_V1.value,
+                &m->nested.balances_force_transfer_V1.value,
                 outValue, outValueLen,
                 pageIdx, pageCount);
         default:
@@ -5583,20 +5579,13 @@ bool _getMethod_ItemIsExpert_V1(uint8_t moduleIdx, uint8_t callIdx, uint8_t item
     }
 }
 
+// Remove any methods that can be passed in to a dispatchable like utility.batch, utility.batchAll or in proposals or in sudo
 bool _getMethod_IsNestingSupported_V1(uint8_t moduleIdx, uint8_t callIdx)
 {
     uint16_t callPrivIdx = ((uint16_t)moduleIdx << 8u) + callIdx;
 
     switch (callPrivIdx) {
-    case 0: // System:Fill block
-    case 1: // System:Remark
-    case 2: // System:Set heap pages
-    case 3: // System:Set code
-    case 4: // System:Set code without checks
-    case 5: // System:Set changes trie config
-    case 6: // System:Set storage
-    case 7: // System:Kill storage
-    case 8: // System:Kill prefix
+    case 9: // System:Remark with event
     case 5376: // Scheduler:Schedule
     case 5377: // Scheduler:Cancel
     case 5378: // Scheduler:Schedule named
@@ -5606,19 +5595,7 @@ bool _getMethod_IsNestingSupported_V1(uint8_t moduleIdx, uint8_t callIdx)
     case 7424: // Babe:Report equivocation
     case 7425: // Babe:Report equivocation unsigned
     case 256: // Timestamp:Set
-    case 512: // Balances:Transfer
-    case 513: // Balances:Set balance
-    case 514: // Balances:Force transfer
-    case 515: // Balances:Transfer keep alive
     case 1536: // Authorship:Set uncles
-    case 7680: // Staking:Bond
-    case 7681: // Staking:Bond extra
-    case 7682: // Staking:Unbond
-    case 7683: // Staking:Withdraw Unbonded
-    case 7684: // Staking:Validate
-    case 7685: // Staking:Nominate
-    case 7686: // Staking:Chill
-    case 7687: // Staking:Set payee
     case 7688: // Staking:Set controller
     case 7689: // Staking:Set validator count
     case 7690: // Staking:Increase validator count
@@ -5629,8 +5606,6 @@ bool _getMethod_IsNestingSupported_V1(uint8_t moduleIdx, uint8_t callIdx)
     case 7695: // Staking:Force unstake
     case 7696: // Staking:Force new era always
     case 7697: // Staking:Cancel deferred slash
-    case 7698: // Staking:Payout stakers
-    case 7699: // Staking:Rebond
     case 7700: // Staking:Set history depth
     case 7701: // Staking:Reap stash
     case 7702: // Staking:Submit election solution
