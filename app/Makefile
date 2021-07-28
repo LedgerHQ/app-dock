@@ -79,7 +79,7 @@ endif
 APP_LOAD_PARAMS = --appFlags 0x200 --delete $(COMMON_LOAD_PARAMS) --path $(APPPATH)
 
 ifeq ($(TARGET_NAME),TARGET_NANOS)
-SCRIPT_LD:=$(CURDIR)/script.ld
+APP_STACK_SIZE=2828
 ICONNAME:=$(CURDIR)/nanos_icon.gif
 endif
 
@@ -170,6 +170,9 @@ LDLIBS   += -lm -lgcc -lc
 #LDLIBS   += -Lrust/target/thumbv6m-none-eabi/release -lrslib
 
 ##########################
+# include $(BOLOS_SDK)/Makefile.glyphs
+GLYPH_SRC_DIR = glyphs
+INCLUDES_PATH += $(MY_DIR)/glyphs
 include $(BOLOS_SDK)/Makefile.glyphs
 
 APP_SOURCE_PATH += $(MY_DIR)/src

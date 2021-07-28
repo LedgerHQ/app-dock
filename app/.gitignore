@@ -46,5 +46,6 @@ bin/
 debug/
 bin/app.sha256
 bin/app.apdu
+glyphs
 
 pkg/zxtool.sh
