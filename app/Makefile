@@ -43,27 +43,16 @@ all: bin/app.elf
 include $(BOLOS_SDK)/Makefile.defines
 
 ifndef COIN
-COIN=DOT
+COIN=DCK
 endif
 
 include $(CURDIR)/Makefile.version
 
 $(info COIN  = [$(COIN)])
-ifeq ($(COIN),DOT)
-# Main app configuration
-DEFINES += APP_STANDARD
-APPNAME = "Polkadot"
-APPPATH = "44'/354'"
-
-else ifeq ($(COIN),DCK)
+ifeq ($(COIN),DCK)
 DEFINES += APP_STANDARD
 APPNAME = "Dock"
 APPPATH = "44'/594'"
-
-else ifeq ($(COIN),Ledgeracio)
-DEFINES += APP_RESTRICTED
-APPNAME = "Polkadot_sec"
-APPPATH = "44'/354'"
 
 else
 define error_message
@@ -216,4 +205,4 @@ dep/%.d: %.c Makefile
 
 .PHONY: listvariants
 listvariants:
-	@echo VARIANTS COIN DOT
+	@echo VARIANTS COIN DCK

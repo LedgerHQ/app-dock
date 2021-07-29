@@ -30,7 +30,3 @@ default:
 	$(info "Calling app Makefile for target $@")
 	COIN=$(COIN) $(MAKE) -C app $@
 endif
-
-build_ledgeracio: COIN=Ledgeracio		# Alternative app purpose
-build_ledgeracio: build
-	cp $(CURDIR)/app/bin/app.elf $(CURDIR)/app/bin/app_ledgeracio.elf
