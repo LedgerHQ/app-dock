@@ -14,8 +14,8 @@
 *  limitations under the License.
 ********************************************************************************/
 
-#include "substrate_dispatch.h"
 #include "substrate_dispatch_V1.h"
+#include "substrate_dispatch.h"
 #include "substrate_strings.h"
 #include "zxmacros.h"
 #include <stdint.h>
