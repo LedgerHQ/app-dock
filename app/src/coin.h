@@ -44,7 +44,7 @@ typedef enum {
 } key_kind_e;
 
 // Coin Specific
-#define PK_ADDRESS_TYPE                     COIN_ADDR_TYPE_DOCK_TESTNET
+#define PK_ADDRESS_TYPE                     COIN_ADDR_TYPE_DOCK_MAINNET
 #define SUPPORTED_TX_VERSION_CURRENT        LEDGER_MAJOR_VERSION
 #define SUPPORTED_TX_VERSION_PREVIOUS       (LEDGER_MAJOR_VERSION - 1)
 #define SUPPORTED_SPEC_VERSION              LEDGER_MINOR_VERSION
@@ -52,7 +52,7 @@ typedef enum {
 
 #define COIN_AMOUNT_DECIMAL_PLACES          6
 
-#define COIN_GENESIS_HASH                   "59d93e2ce42abb8aa52ca9a9e820233667104751f8f2980578a47a26a7235027"
+#define COIN_GENESIS_HASH                   "6bfe24dca2a3be10f22212678ac13a6446ec764103c0f3471c71609eac384aae"
 #define COIN_NAME                           "Dock"
 #define COIN_TICKER                         "DOCK"
 
