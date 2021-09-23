@@ -3,19 +3,22 @@
 ## Introduction
 
 The app is used to manage Dock's native tokens. The app can be used to transfer tokens, stake tokens as a validator or 
-nominator and participate in governance by voting. The explorer is available [here](https://fe-staging.dock.io/?rpc=wss%3A%2F%2Fknox-1.dock.io#/explorer). We recommend using Ledger vs paper or browser wallet to individuals 
-with a substantial amount of tokens. For any queries, send us an email at support.dock.io.
+nominator and participate in governance by voting. The explorer is available [here](https://fe-staging.dock.io/?rpc=wss%3A%2F%2Fknox-1.dock.io#/explorer). We recommend using Ledger vs paper or browser wallet to individuals with a substantial amount of tokens. For any queries, send us an email at support.dock.io.
 
 ## Requirements
-- 
-- You have [initialized](https://support.ledger.com/hc/en-us/articles/360000613793) your Ledger Nano S
-- The latest [firmware](https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware) is installed.
+
+- You have initialized your Ledger device as per the instructions.
+  - [Nano S](https://support.ledger.com/hc/en-us/articles/360000613793-Set-up-your-Ledger-Nano-S?docs=true)
+  - [Nano X](https://support.ledger.com/hc/en-us/articles/360018784134-Set-up-your-Ledger-Nano-X?docs=true)
+- The latest firmware is installed.
+  - [Nano S](https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware?docs=true)
+  - [Nano X](https://support.ledger.com/hc/en-us/articles/360013349800-Update-Ledger-Nano-X-firmware?docs=true)
 - Ledger Live is [ready to use](https://support.ledger.com/hc/en-us/articles/360006395233-Take-your-first-steps).
 - A web-browser is installed. We have tested with Google Chrome and Firefox.
 
 ## App Installation
 
-1. Connect and unlock your Ledger Nano S.
+1. Connect and unlock your Ledger device.
 2. Open the Manager in Ledger Live.
 3. Allow the manager on your device by pressing both buttons.
 4. Find **Dock** in the app catalog. You will see 2 apps, **Dock** and **Dock XL**. **Dock XL** is a bigger app and has advanced features like democracy while **Dock** is a smaller app and contains basic features like balance transfer and staking.
@@ -27,7 +30,8 @@ with a substantial amount of tokens. For any queries, send us an email at suppor
 ## Connecting to the web-app
 
 To use any feature of the app, it first needs to be connected to [our webapp](https://fe-staging.dock.io/?rpc=wss%3A%2F%2Fknox-1.dock.io). Below are the instructions
-1. Connect your Ledger device and open 
+
+1. Connect your Ledger device and open.
 2. Go to [Settings tab of the webapp](https://fe-staging.dock.io/?rpc=wss%3A%2F%2Fknox-1.dock.io#/settings).
 3. From the dropdown "manage hardware connections", select option "Attach Ledger via WebUSB" and click **Save** button on the bottom right as shown below
    ![setings](ledger-settings.png)
@@ -89,7 +93,7 @@ In the example below, the fees is 2.0650 DOCK tokens
    In example below, the first screen shows that "Balances" module's "Transfer keep alive" function is called.
    ![function screen](ledger-show-function.jpg)
    
-   On the next 2 screens, destination address is shown. Make sure the destination address is correct. Addresses are large so they always take 2 screens on Nano S. 
+   On the next 2 screens, destination address is shown. Make sure the destination address is correct. Addresses are large so they always take 2 screens on Nano S and Nano X. Images below are from Nano S.
    ![dest address screen 1](ledger-dest-address1.jpg)
 
    ![dest address screen 2](ledger-dest-address2.jpg)
@@ -97,7 +101,7 @@ In the example below, the fees is 2.0650 DOCK tokens
    On the next screen, amount of 5 DOCK tokens is shown. Make sure the amount is what you entered.
    ![amount screen](ledger-amount.jpg)
    
-   On the next screen, "APPROVE" option is shown. Selecting it (by pressing both buttons on Nano S) will sign the transaction 
+   On the next screen, "APPROVE" option is shown. Selecting it (by pressing both buttons on Ledger) will sign the transaction 
    and broadcast it to the network (via the webapp)
    ![appove screen](ledger-approve.jpg)
 
