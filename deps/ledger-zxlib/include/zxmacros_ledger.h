@@ -21,30 +21,22 @@
 #include "cx.h"
 
 #define MEMCPY_NV nvm_write
+#define MEMMOVE memmove
+#define MEMSET memset
+#define MEMCPY memcpy
+#define MEMCMP memcmp
+#define MEMZERO explicit_bzero
 
 #if defined(TARGET_NANOX)
     #include "ux.h"
     #define NV_CONST const
     #define NV_VOLATILE volatile
     #define IS_UX_ALLOWED (G_ux_params.len != BOLOS_UX_IGNORE && G_ux_params.len != BOLOS_UX_CONTINUE)
-
-    #define MEMMOVE os_memmove
-    #define MEMSET os_memset
-    #define MEMCPY os_memcpy
-    #define MEMCMP os_memcmp
-    #define MEMZERO explicit_bzero
 #else
     #include "os_io_seproxyhal.h"
     #define NV_CONST
     #define NV_VOLATILE
     #define IS_UX_ALLOWED (ux.params.len != BOLOS_UX_IGNORE && ux.params.len != BOLOS_UX_CONTINUE)
-
-    #define MEMCPY memmove
-    #define MEMMOVE memmove
-    #define MEMSET memset
-    #define MEMCMP memcmp
-    #define MEMZERO explicit_bzero
-
 #endif
 
 #define CHECK_APP_CANARY() check_app_canary();
