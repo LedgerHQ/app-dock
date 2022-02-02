@@ -21,6 +21,10 @@ extern "C" {
 
 #include "zxmacros.h"
 
+#if !defined(TARGET_NANOS) && !defined(TARGET_NANOX)
+#include <bsd/string.h>
+#endif
+
 #define NUM_TO_STR(TYPE) __Z_INLINE const char * TYPE##_to_str(char *data, int dataLen, TYPE##_t number) { \
     if (dataLen < 2) return "Buffer too small";     \
     MEMZERO(data, dataLen);                         \
