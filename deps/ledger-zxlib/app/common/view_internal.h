@@ -52,7 +52,9 @@ typedef struct {
     struct {
         char key[MAX_CHARS_PER_KEY_LINE];
         char value[MAX_CHARS_PER_VALUE1_LINE];
+#if defined(TARGET_NANOS)
         char value2[MAX_CHARS_PER_VALUE2_LINE];
+#endif
     };
     viewfunc_getItem_t viewfuncGetItem;
     viewfunc_getNumItems_t viewfuncGetNumItems;
