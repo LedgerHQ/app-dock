@@ -148,6 +148,7 @@ target_include_directories(unittests PRIVATE
 target_link_libraries(unittests PRIVATE
         gtest_main
         app_lib
+        bsd
         CONAN_PKG::fmt
         CONAN_PKG::jsoncpp)
 
@@ -165,7 +166,7 @@ if(ENABLE_FUZZING)
 
     foreach(target ${FUZZ_TARGETS})
         add_executable(fuzz-${target} ${CMAKE_CURRENT_SOURCE_DIR}/fuzz/${target}.cpp)
-        target_link_libraries(fuzz-${target} PRIVATE app_lib)
+        target_link_libraries(fuzz-${target} PRIVATE app_lib bsd)
         target_link_options(fuzz-${target} PRIVATE "-fsanitize=fuzzer")
     endforeach()
 endif()
