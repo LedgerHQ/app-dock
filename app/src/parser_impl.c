@@ -224,9 +224,9 @@ parser_error_t _toStringCompactInt(const compactInt_t *c,
         size_t size = strlen(bufferUI) + strlen(prefix) + 2;
         char _tmpBuffer[200];
         MEMZERO(_tmpBuffer, sizeof(_tmpBuffer));
-        strcat(_tmpBuffer, prefix);
-        strcat(_tmpBuffer, " ");
-        strcat(_tmpBuffer, bufferUI);
+        strlcat(_tmpBuffer, prefix, sizeof(_tmpBuffer));
+        strlcat(_tmpBuffer, " ", sizeof(_tmpBuffer));
+        strlcat(_tmpBuffer, bufferUI, sizeof(_tmpBuffer));
         // print length: strlen(value) + strlen(prefix) + strlen(" ") + strlen("\0")
         MEMZERO(bufferUI, sizeof(bufferUI));
         snprintf(bufferUI, size, "%s", _tmpBuffer);

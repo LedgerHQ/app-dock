@@ -45,8 +45,9 @@ unsigned char io_event(unsigned char channel) {
             break;
 
         case SEPROXYHAL_TAG_DISPLAY_PROCESSED_EVENT:
-            if (!UX_DISPLAYED())
+            if (!UX_DISPLAYED()) {
                 UX_DISPLAYED_EVENT();
+            }
             break;
 
         case SEPROXYHAL_TAG_TICKER_EVENT: { //
@@ -143,9 +144,6 @@ void app_init() {
 
 }
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wmissing-noreturn"
-
 void app_main() {
     volatile uint32_t rx = 0, tx = 0, flags = 0;
 
@@ -199,5 +197,3 @@ void app_main() {
         END_TRY;
     }
 }
-
-#pragma clang diagnostic pop
