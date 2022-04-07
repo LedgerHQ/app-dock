@@ -21,7 +21,7 @@ extern "C" {
 
 #include "zxmacros.h"
 
-#if !defined(TARGET_NANOS) && !defined(TARGET_NANOX)
+#if !defined(TARGET_NANOS) && !defined(TARGET_NANOX) && !defined(TARGET_NANOS2)
 #include <bsd/string.h>
 #endif
 

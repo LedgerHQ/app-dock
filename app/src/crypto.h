@@ -37,7 +37,7 @@ typedef struct {
 
 extern uint16_t sr25519_signdataLen;
 
-#if defined(TARGET_NANOS) || defined(TARGET_NANOX)
+#if defined(TARGET_NANOS) || defined(TARGET_NANOX) || defined(TARGET_NANOS2)
 sr25519_signdata_t NV_CONST N_srdata_impl __attribute__ ((aligned(64)));
 #define N_sr25519_signdata (*(NV_VOLATILE sr25519_signdata_t *)PIC(&N_srdata_impl))
 #endif
