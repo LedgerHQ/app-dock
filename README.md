@@ -4,7 +4,7 @@
 
 -------------------
 ## Credits
-This app is a fork of [ledger-polkadot] developed by [zondax.ch](zondax.ch). It has been modified to work with [Dock](https://www.dock.io/).  
+This app is a fork of [ledger-polkadot](https://github.com/Zondax/ledger-polkadot) developed by [zondax.ch](zondax.ch). It has been modified to work with [Dock](https://www.dock.io/).
 ![zondax](docs/zondax.jpg)
 
 _Visit Zondax website at [zondax.ch](zondax.ch)_
@@ -26,11 +26,10 @@ For more information: [How to build](docs/build.md)
 
 Please:
 
-- **Do not use in production**
 - **Do not use a Ledger device with funds for development purposes.**
 - **Have a separate and marked device that is used ONLY for development and testing**
 
-# Dock 1.27.x
+# Dock 1.36.x
 
 ## System
 

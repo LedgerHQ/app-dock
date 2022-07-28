@@ -171,7 +171,7 @@ Many of our integration tests expect the device to be configured with a known te
   - Need these env variables set before building, `GCCPATH`, `CLANGPATH` and `BOLOS_SDK`. They should point to the above gcc, clang and Ledger SDK.
   - By default the app supports only handful of methods. To support all methods, set `SUBSTRATE_PARSER_FULL=1`.
   - To enable support for Sr25519 signing, set `SUPPORT_SR25519=1`
-  - Go to the [app](../app) directory and run `make`. Or `GCCPATH=<path of bin directory of above gcc>  CLANGPATH=<path of bin directory of above clang> BOLOS_SDK=<path of Ledger sdk> make` if above env vars are not set. 
+  - Go to the [app](../app) directory and run `make`. Or `GCCPATH=<path of bin directory of above gcc>  CLANGPATH=<path of bin directory of above clang> BOLOS_SDK=<path of Ledger sdk> make` if above env vars are not set.  
   - To clean up and do a fresh build, run `make clean` before running `make`
 
 - Installing the app
