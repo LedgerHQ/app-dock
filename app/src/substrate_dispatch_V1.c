@@ -1877,19 +1877,19 @@ const char* _getMethod_Name_V1(uint8_t moduleIdx, uint8_t callIdx)
         return STR_ME_PROPOSE_BOUNTY;
     case 8961: /* module 35 call 1 */
         return STR_ME_APPROVE_BOUNTY;
-    case 8961: /* module 35 call 2 */
+    case 8962: /* module 35 call 2 */
         return STR_ME_PROPOSE_CURATOR;
-    case 8962: /* module 35 call 3 */
+    case 8963: /* module 35 call 3 */
         return STR_ME_UNASSIGN_CURATOR;
-    case 8963: /* module 35 call 4 */
+    case 8964: /* module 35 call 4 */
         return STR_ME_ACCEPT_CURATOR;
-    case 8964: /* module 35 call 5 */
+    case 8965: /* module 35 call 5 */
         return STR_ME_AWARD_BOUNTY;
-    case 8965: /* module 35 call 6 */
+    case 8966: /* module 35 call 6 */
         return STR_ME_CLAIM_BOUNTY;
-    case 8966: /* module 35 call 7 */
+    case 8967: /* module 35 call 7 */
         return STR_ME_CLOSE_BOUNTY;
-    case 8967: /* module 35 call 8 */
+    case 8968: /* module 35 call 8 */
         return STR_ME_EXTEND_BOUNTY_EXPIRY;
     case 9728: /* module 38 call 0 */
         return STR_ME_REPORT_AWESOME;
@@ -2983,7 +2983,7 @@ const char* _getMethod_ItemName_V1(uint8_t moduleIdx, uint8_t callIdx, uint8_t i
         default:
             return NULL;
         }
-    case 5376: /* module 20 call 0 */
+    case 5120: /* module 20 call 0 */
         switch (itemIdx) {
         case 0:
             return STR_IT_new_members;
@@ -2994,7 +2994,7 @@ const char* _getMethod_ItemName_V1(uint8_t moduleIdx, uint8_t callIdx, uint8_t i
         default:
             return NULL;
         }
-    case 5377: /* module 20 call 1 */
+    case 5121: /* module 20 call 1 */
         switch (itemIdx) {
         case 0:
             return STR_IT_proposal;
@@ -3003,7 +3003,7 @@ const char* _getMethod_ItemName_V1(uint8_t moduleIdx, uint8_t callIdx, uint8_t i
         default:
             return NULL;
         }
-    case 5378: /* module 20 call 2 */
+    case 5122: /* module 20 call 2 */
         switch (itemIdx) {
         case 0:
             return STR_IT_threshold;
@@ -3014,7 +3014,7 @@ const char* _getMethod_ItemName_V1(uint8_t moduleIdx, uint8_t callIdx, uint8_t i
         default:
             return NULL;
         }
-    case 5379: /* module 20 call 3 */
+    case 5123: /* module 20 call 3 */
         switch (itemIdx) {
         case 0:
             return STR_IT_proposal;
@@ -3025,7 +3025,7 @@ const char* _getMethod_ItemName_V1(uint8_t moduleIdx, uint8_t callIdx, uint8_t i
         default:
             return NULL;
         }
-    case 5380: /* module 20 call 4 */
+    case 5124: /* module 20 call 4 */
         switch (itemIdx) {
         case 0:
             return STR_IT_proposal_hash;
@@ -3038,7 +3038,7 @@ const char* _getMethod_ItemName_V1(uint8_t moduleIdx, uint8_t callIdx, uint8_t i
         default:
             return NULL;
         }
-    case 5381: /* module 20 call 5 */
+    case 5125: /* module 20 call 5 */
         switch (itemIdx) {
         case 0:
             return STR_IT_proposal_hash;
@@ -5030,7 +5030,7 @@ parser_error_t _getMethod_ItemValue_V1(
         default:
             return parser_no_data;
         }
-    case 5120: /* module 20 call 0 */
+    case 5376: /* module 21 call 0 */
         switch (itemIdx) {
         case 0: /* technicalmembership_add_member_V1 - who */;
             return _toStringAccountId_V1(
@@ -5040,7 +5040,7 @@ parser_error_t _getMethod_ItemValue_V1(
         default:
             return parser_no_data;
         }
-    case 5121: /* module 20 call 1 */
+    case 5377: /* module 21 call 1 */
         switch (itemIdx) {
         case 0: /* technicalmembership_remove_member_V1 - who */;
             return _toStringAccountId_V1(
@@ -5050,7 +5050,7 @@ parser_error_t _getMethod_ItemValue_V1(
         default:
             return parser_no_data;
         }
-    case 5122: /* module 20 call 2 */
+    case 5378: /* module 21 call 2 */
         switch (itemIdx) {
         case 0: /* technicalmembership_swap_member_V1 - remove */;
             return _toStringAccountId_V1(
@@ -5065,7 +5065,7 @@ parser_error_t _getMethod_ItemValue_V1(
         default:
             return parser_no_data;
         }
-    case 5123: /* module 20 call 3 */
+    case 5379: /* module 21 call 3 */
         switch (itemIdx) {
         case 0: /* technicalmembership_reset_members_V1 - members */;
             return _toStringVecAccountId_V1(
@@ -5075,7 +5075,7 @@ parser_error_t _getMethod_ItemValue_V1(
         default:
             return parser_no_data;
         }
-    case 5124: /* module 20 call 4 */
+    case 5380: /* module 21 call 4 */
         switch (itemIdx) {
         case 0: /* technicalmembership_change_key_V1 - new_ */;
             return _toStringAccountId_V1(
@@ -5085,7 +5085,7 @@ parser_error_t _getMethod_ItemValue_V1(
         default:
             return parser_no_data;
         }
-    case 5125: /* module 20 call 5 */
+    case 5381: /* module 21 call 5 */
         switch (itemIdx) {
         case 0: /* technicalmembership_set_prime_V1 - who */;
             return _toStringAccountId_V1(
@@ -5095,7 +5095,7 @@ parser_error_t _getMethod_ItemValue_V1(
         default:
             return parser_no_data;
         }
-    case 5126: /* module 20 call 6 */
+    case 5382: /* module 21 call 6 */
         switch (itemIdx) {
         default:
             return parser_no_data;
