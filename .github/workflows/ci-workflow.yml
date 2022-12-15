@@ -17,8 +17,8 @@ jobs:
         include:
           - SDK: "$NANOS_SDK"
             model: nanos
-          - SDK: "$NANOX_SDK"
-            model: nanox
+#          - SDK: "$NANOX_SDK"
+#            model: nanox
 #          - SDK: "$NANOSP_SDK"
 #            model: nanosp
     runs-on: ubuntu-latest
