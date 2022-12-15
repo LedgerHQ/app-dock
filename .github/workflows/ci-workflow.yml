@@ -19,8 +19,8 @@ jobs:
             model: nanos
           - SDK: "$NANOX_SDK"
             model: nanox
-          - SDK: "$NANOSP_SDK"
-            model: nanosp
+#          - SDK: "$NANOSP_SDK"
+#            model: nanosp
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/ledgerhq/ledger-app-builder/ledger-app-builder:latest
