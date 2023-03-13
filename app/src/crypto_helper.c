@@ -19,15 +19,15 @@
 
 #if defined(TARGET_NANOS) || defined(TARGET_NANOX) || defined(TARGET_NANOS2)
 #include "cx.h"
+#include "cx_hash.h"
 
 int ss58hash(const unsigned char *in, unsigned int inLen,
                    unsigned char *out, unsigned int outLen) {
 
     cx_blake2b_t ctx;
     cx_blake2b_init(&ctx, 512);
-    cx_hash(&ctx.header, 0, SS58_BLAKE_PREFIX, SS58_BLAKE_PREFIX_LEN, NULL, 0);
-    cx_hash(&ctx.header, CX_LAST, in, inLen, out, outLen);
-
+    cx_blake2b((cx_hash_t*)&ctx, 0, SS58_BLAKE_PREFIX, SS58_BLAKE_PREFIX_LEN, NULL, 0);
+    cx_blake2b((cx_hash_t*)&ctx, CX_LAST, in, inLen, out, outLen);
     return 0;
 }
 #else

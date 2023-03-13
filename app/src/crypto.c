@@ -87,19 +87,31 @@ zxerr_t crypto_extractPublicKey(key_kind_e addressKind, const uint32_t path[HDPA
     return zxerr_ok;
 }
 
+#if defined(HAVE_BLAKE2)
+#include "cx_blake2b.h"
+#include "cx_hash.h"
+union cx_u {
+  cx_xblake_t blake;
+};
+union cx_u G_cx;
+#else
+# error "HAVE_BLAKE2 must be defined !"
+#endif
+
 zxerr_t crypto_sign_ed25519(uint8_t *signature, uint16_t signatureMaxlen,
                             const uint8_t *message, uint16_t messageLen,
                             uint16_t *signatureLen) {
     const uint8_t *toSign = message;
     uint8_t messageDigest[BLAKE2B_DIGEST_SIZE];
 
+
     if (messageLen > MAX_SIGN_SIZE) {
-        // Hash it
-        cx_blake2b_t ctx;
-        cx_blake2b_init(&ctx, 256);
-        cx_hash(&ctx.header, CX_LAST, message, messageLen, messageDigest, BLAKE2B_DIGEST_SIZE);
-        toSign = messageDigest;
-        messageLen = BLAKE2B_DIGEST_SIZE;
+      // Hash it
+      cx_blake2b_t ctx;
+      cx_blake2b_init(&ctx, 256);
+      cx_blake2b((cx_hash_t*)&ctx, CX_LAST, message, messageLen, messageDigest, BLAKE2B_DIGEST_SIZE);
+      toSign = messageDigest;
+      messageLen = BLAKE2B_DIGEST_SIZE;
     }
 
     cx_ecfp_private_key_t cx_privateKey;
@@ -161,12 +173,12 @@ zxerr_t crypto_sign_ed25519(uint8_t *signature, uint16_t signatureMaxlen,
 zxerr_t crypto_sign_sr25519_prephase(uint8_t *buffer, uint16_t bufferLen,
                                      const uint8_t *message, uint16_t messageLen) {
     if (messageLen > MAX_SIGN_SIZE) {
-        uint8_t messageDigest[BLAKE2B_DIGEST_SIZE];
-        cx_blake2b_t *ctx = (cx_blake2b_t *) buffer;
-        cx_blake2b_init(ctx, 256);
-        cx_hash(&ctx->header, CX_LAST, message, messageLen, messageDigest, BLAKE2B_DIGEST_SIZE);
-        MEMCPY_NV((void *) &N_sr25519_signdata.signdata, messageDigest, BLAKE2B_DIGEST_SIZE);
-        sr25519_signdataLen = BLAKE2B_DIGEST_SIZE;
+      uint8_t messageDigest[BLAKE2B_DIGEST_SIZE];
+      cx_blake2b_t *ctx = (cx_blake2b_t *) buffer;
+      cx_blake2b_init(ctx, 256);
+      cx_blake2b((cx_hash_t*)&ctx, CX_LAST, message, messageLen, messageDigest, BLAKE2B_DIGEST_SIZE);
+      MEMCPY_NV((void *) &N_sr25519_signdata.signdata, messageDigest, BLAKE2B_DIGEST_SIZE);
+      sr25519_signdataLen = BLAKE2B_DIGEST_SIZE;
     } else {
         MEMCPY_NV((void *) &N_sr25519_signdata.signdata, (void *) message, messageLen);
         sr25519_signdataLen = messageLen;

@@ -67,6 +67,12 @@ endif
 
 include $(CURDIR)/Makefile.version
 
+# BLAKE2 addition.
+DEFINES += HAVE_BLAKE2
+INCLUDES_PATH += $(BOLOS_SDK)/lib_cxng/src
+SOURCE_PATH += $(BOLOS_SDK)/lib_cxng/src/cx_blake2b.c
+# BLAKE2 - End
+
 $(info COIN  = [$(COIN)])
 
 ifeq ($(COIN),DOCK)
