@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - master
+      - main
       - develop
   pull_request:
 
@@ -13,14 +14,15 @@ jobs:
   nano_build:
     name: Build debug application for NanoS, X and S+
     strategy:
+      fail-fast: false
       matrix:
         include:
           - SDK: "$NANOS_SDK"
             model: nanos
-#          - SDK: "$NANOX_SDK"
-#            model: nanox
-#          - SDK: "$NANOSP_SDK"
-#            model: nanosp
+          - SDK: "$NANOX_SDK"
+            model: nanox
+          - SDK: "$NANOSP_SDK"
+            model: nanosp
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/ledgerhq/ledger-app-builder/ledger-app-builder:latest
