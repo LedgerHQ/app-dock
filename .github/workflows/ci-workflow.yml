@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - master
+      - main
       - develop
   pull_request:
 
@@ -13,14 +14,15 @@ jobs:
   nano_build:
     name: Build debug application for NanoS, X and S+
     strategy:
+      fail-fast: false
       matrix:
         include:
           - SDK: "$NANOS_SDK"
             model: nanos
-#          - SDK: "$NANOX_SDK"
-#            model: nanox
-#          - SDK: "$NANOSP_SDK"
-#            model: nanosp
+          - SDK: "$NANOX_SDK"
+            model: nanox
+          - SDK: "$NANOSP_SDK"
+            model: nanosp
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/ledgerhq/ledger-app-builder/ledger-app-builder:latest
@@ -30,7 +32,7 @@ jobs:
 
       - name: Build
         run: |
-          make SUPPORT_SR25519=1 DEBUG=1 BOLOS_SDK=${{ matrix.SDK }}
+          make DEBUG=1 BOLOS_SDK=${{ matrix.SDK }}
           mv app/bin/app.elf "app/bin/${{ matrix.model }}.elf"
       - name: Upload app binary
         uses: actions/upload-artifact@v2
