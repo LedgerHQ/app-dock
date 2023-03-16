@@ -20,12 +20,11 @@ ifeq ($(BOLOS_SDK),)
 $(error BOLOS_SDK is not set)
 endif
 
-# TODO: Remove this hack
-MAKEFLAGS:= -j 1
-
 MY_DIR := $(dir $(lastword $(MAKEFILE_LIST)))
 
-all: bin/app.elf
+.PHONY: full_build
+full_build: rust
+	$(MAKE) default
 	@echo "#!/usr/bin/env bash" > $(OUTPUT_INSTALLER)
 	@echo "APPNAME=\"${APPNAME}\"" >> $(OUTPUT_INSTALLER)
 	@echo "APPVERSION=\"${APPVERSION}\"" >> $(OUTPUT_INSTALLER)
