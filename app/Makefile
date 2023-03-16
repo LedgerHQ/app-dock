@@ -226,6 +226,10 @@ APP_SOURCE_PATH += $(MY_DIR)/../deps/ledger-zxlib/app/common
 SDK_SOURCE_PATH += lib_stusb lib_stusb_impl
 SDK_SOURCE_PATH  += lib_ux
 
+
+# Import generic rules from the SDK
+include $(BOLOS_SDK)/Makefile.rules
+
 .PHONY: rust
 rust:
 	cd rust && CARGO_HOME="$(CURDIR)/rust/.cargo" cargo build --target thumbv6m-none-eabi --release
@@ -247,9 +251,6 @@ load:
 .PHONY: delete
 delete:
 	python -m ledgerblue.deleteApp $(COMMON_DELETE_PARAMS)
-
-# Import generic rules from the SDK
-include $(BOLOS_SDK)/Makefile.rules
 
 #add dependency on custom makefile filename
 dep/%.d: %.c Makefile
