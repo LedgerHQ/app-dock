@@ -20,6 +20,9 @@ ifeq ($(BOLOS_SDK),)
 $(error BOLOS_SDK is not set)
 endif
 
+# TODO: Remove this hack
+MAKEFLAGS:= -j 1
+
 MY_DIR := $(dir $(lastword $(MAKEFILE_LIST)))
 
 all: bin/app.elf
