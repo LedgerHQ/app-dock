@@ -61,11 +61,6 @@ jobs:
           command: |
             source /home/zondax/.cargo/env
             make SUBSTRATE_PARSER_FULL=1
-      - run:
-          name: Build SR25519 app
-          command: |
-            source /home/zondax/.cargo/env
-            make SUPPORT_SR25519=1
 
   test_zemu:
     machine:

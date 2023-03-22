@@ -22,7 +22,9 @@ endif
 
 MY_DIR := $(dir $(lastword $(MAKEFILE_LIST)))
 
-all: bin/app.elf
+.PHONY: full_build
+full_build: rust
+	$(MAKE) default
 	@echo "#!/usr/bin/env bash" > $(OUTPUT_INSTALLER)
 	@echo "APPNAME=\"${APPNAME}\"" >> $(OUTPUT_INSTALLER)
 	@echo "APPVERSION=\"${APPVERSION}\"" >> $(OUTPUT_INSTALLER)
@@ -103,8 +105,8 @@ endif
 APP_LOAD_PARAMS += --delete $(COMMON_LOAD_PARAMS) --path $(APPPATH) --curve ed25519
 
 # Pending review flag
-#APP_LOAD_PARAMS += --tlvraw 9F:01
-#DEFINES += HAVE_PENDING_REVIEW_SCREEN
+APP_LOAD_PARAMS += --tlvraw 9F:01
+DEFINES += HAVE_PENDING_REVIEW_SCREEN
 
 
 ifeq ($(TARGET_NAME),TARGET_NANOS)
