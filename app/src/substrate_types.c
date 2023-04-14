@@ -578,9 +578,9 @@ parser_error_t _toStringCall(
     ctx.tx_obj->nestCallIdx.isTail = false;
 
     // Read the Call, so we get the contained Method
-    parser_error_t err = _readCallImpl(&ctx, &_call, (pd_MethodNested_t*)&_txObj.method);
-    if (err != parser_ok) {
-        return err;
+    parser_error_t err_ = _readCallImpl(&ctx, &_call, (pd_MethodNested_t*)&_txObj.method);
+    if (err_ != parser_ok) {
+        return err_;
     }
 
     // Get num items of this current Call
