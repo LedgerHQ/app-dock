@@ -104,11 +104,6 @@ APP_LOAD_PARAMS = --appFlags 0x000
 endif
 APP_LOAD_PARAMS += --delete $(COMMON_LOAD_PARAMS) --path $(APPPATH) --curve ed25519
 
-# Pending review flag
-APP_LOAD_PARAMS += --tlvraw 9F:01
-DEFINES += HAVE_PENDING_REVIEW_SCREEN
-
-
 ifeq ($(TARGET_NAME),TARGET_NANOS)
 APP_STACK_SIZE:=3472
 ICONNAME:=$(CURDIR)/nanos_icon.gif
