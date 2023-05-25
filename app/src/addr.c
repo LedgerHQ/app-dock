@@ -48,9 +48,9 @@ zxerr_t addr_getItem(int8_t displayIdx,
             }
 
             snprintf(outKey, outKeyLen, "Your Path");
-            char buffer[300];
-            bip32_to_str(buffer, sizeof(buffer), hdPath, HDPATH_LEN_DEFAULT);
-            pageString(outVal, outValLen, buffer, pageIdx, pageCount);
+            char buffer_[300];
+            bip32_to_str(buffer_, sizeof(buffer_), hdPath, HDPATH_LEN_DEFAULT);
+            pageString(outVal, outValLen, buffer_, pageIdx, pageCount);
             return zxerr_ok;
         }
         default:

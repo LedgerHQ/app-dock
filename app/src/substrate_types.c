@@ -578,9 +578,9 @@ parser_error_t _toStringCall(
     ctx.tx_obj->nestCallIdx.isTail = false;
 
     // Read the Call, so we get the contained Method
-    parser_error_t err = _readCallImpl(&ctx, &_call, (pd_MethodNested_t*)&_txObj.method);
-    if (err != parser_ok) {
-        return err;
+    parser_error_t err_ = _readCallImpl(&ctx, &_call, (pd_MethodNested_t*)&_txObj.method);
+    if (err_ != parser_ok) {
+        return err_;
     }
 
     // Get num items of this current Call
@@ -676,7 +676,7 @@ parser_error_t _toStringVecCall(
     ctx.tx_obj->nestCallIdx._nextPtr = NULL;
     ctx.tx_obj->nestCallIdx.isTail = true;
 
-    for (uint16_t i = 0; i < v->_len; i++) {
+    for (uint64_t i = 0; i < v->_len; i++) {
         ctx.tx_obj->nestCallIdx._ptr = NULL;
         ctx.tx_obj->nestCallIdx._nextPtr = NULL;
         ctx.tx_obj->nestCallIdx.slotIdx = 0;
@@ -687,7 +687,7 @@ parser_error_t _toStringVecCall(
 
     /* Then iterate until we can print the corresponding chunk*/
     parser_init(&ctx, v->_ptr, v->_lenBuffer);
-    for (uint16_t i = 0; i < v->_len; i++) {
+    for (uint64_t i = 0; i < v->_len; i++) {
         ctx.tx_obj->nestCallIdx._ptr = NULL;
         ctx.tx_obj->nestCallIdx._nextPtr = NULL;
         ctx.tx_obj->nestCallIdx.slotIdx = 0;
