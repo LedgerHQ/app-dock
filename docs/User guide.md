@@ -112,4 +112,4 @@ In the example below, the fees is 2.0650 DOCK tokens
    ![success](transfer-succes.png)
 
 ## Support
-In case of any query, send us an email at support.dock.io or join our [Riot channel](https://app.element.io/#/room/#!KpPIERdKQjLTTwsOkn:matrix.org).
+In case of any query, send us an email at support@dock.io.
